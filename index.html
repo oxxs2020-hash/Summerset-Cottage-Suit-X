@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Summerset Cottage & Suites</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-bg: #FCFCFA;
@@ -15,7 +15,7 @@
         }
 
         body {
-            font-family: 'Lato', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
             color: var(--text-dark);
@@ -32,14 +32,18 @@
 
         header {
             background-image: url('Norms house front.jpeg');
-            background-size: contain;
+            background-size: cover;
             background-repeat: no-repeat;
             background-position: center top;
             background-attachment: fixed;
-            padding: 500px 20px 40px 20px;
-            text-align: center;
+            height: 450px;
+            padding: 40px 60px;
+            text-align: left;
             border-bottom: 1px solid var(--border-light);
             position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
         }
 
         header h2, header p {
@@ -48,7 +52,7 @@
         }
 
         header h2 {
-            font-size: 1.8em;
+            font-size: 2.2em;
             letter-spacing: 4px;
             text-transform: uppercase;
             color: var(--text-dark);
@@ -56,10 +60,11 @@
 
         header p {
             margin: 10px 0 0 0;
-            font-size: 0.85em;
+            font-size: 0.9em;
             letter-spacing: 3px;
             color: var(--accent-gold);
             text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .container {
@@ -96,12 +101,7 @@
             font-weight: 400;
         }
 
-        .suite-button:hover {
-            background-color: var(--accent-gold);
-            color: #FFFFFF;
-        }
-
-        .suite-button.active {
+        .suite-button:hover, .suite-button.active {
             background-color: var(--accent-gold);
             color: #FFFFFF;
         }
@@ -123,6 +123,14 @@
             font-size: 3.5em;
             color: var(--text-dark);
             margin-bottom: 10px;
+        }
+
+        .designer-text {
+            color: var(--accent-gold);
+            font-size: 1.1em;
+            font-style: italic;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
         }
 
         .location {
@@ -260,132 +268,58 @@
             margin: 0;
         }
 
-        .booking-section {
-            text-align: center;
-            padding: 40px 0 80px 0;
-        }
-
-        .book-button {
-            display: inline-block;
-            background-color: var(--accent-gold);
-            color: #FFFFFF;
-            padding: 20px 60px;
-            font-size: 0.9em;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            text-decoration: none;
-            border: 1px solid var(--accent-gold);
-            transition: all 0.4s ease;
-        }
-
-        .book-button:hover {
-            background-color: transparent;
-            color: var(--accent-gold);
-        }
-
-        /* Contact Section */
+        /* Premium Contact Section Redesign */
         .contact-section {
-            background-color: #FFFFFF;
-            padding: 80px 40px;
+            background-color: #1A1A1A;
+            color: #FFFFFF;
+            padding: 100px 40px;
             text-align: center;
-            border-top: 1px solid var(--border-light);
-            margin-top: 60px;
+            margin-top: 40px;
         }
 
         .contact-section h2 {
-            font-size: 2.5em;
-            margin-bottom: 50px;
-            color: var(--text-dark);
+            font-size: 2.8em;
+            margin-bottom: 60px;
+            color: var(--accent-gold);
         }
 
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 50px;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
         .contact-item h3 {
-            font-size: 1.3em;
+            font-size: 1em;
             margin-bottom: 15px;
-            color: var(--text-dark);
+            color: var(--accent-gold);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
         }
 
         .contact-item p {
-            color: var(--text-muted);
-            font-size: 1.05em;
+            color: #CCCCCC;
+            font-size: 1.1em;
             margin: 0;
+            line-height: 1.6;
         }
 
         .contact-item a {
-            color: var(--accent-gold);
+            color: #FFFFFF;
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         .contact-item a:hover {
-            color: var(--text-dark);
-        }
-
-        /* Background Music Controls */
-        .music-controls {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 1000;
-        }
-
-        .music-btn {
-            background-color: var(--accent-gold);
-            color: #FFFFFF;
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1.5em;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .music-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(197, 160, 89, 0.5);
-        }
-
-        .music-btn.muted {
-            background-color: #CCCCCC;
-        }
-
-        .music-icon {
-            animation: float 3s ease-in-out infinite;
-        }
-
-        .music-btn.muted .music-icon {
-            animation: none;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-5px); }
+            color: var(--accent-gold);
         }
     </style>
 </head>
 <body>
-
-<!-- Background Music -->
-<audio id="bgMusic" loop style="display: none;">
-    <source src="Music.mp3" type="audio/mpeg">
-</audio>
-
-<div class="music-controls">
-    <button id="musicToggle" class="music-btn" title="Toggle Music">
-        <span class="music-icon">♪</span>
-    </button>
-</div>
 
 <header>
     <h2>Summerset Cottage & Suites</h2>
@@ -396,24 +330,23 @@
     
     <div class="suite-selector">
         <div class="suite-buttons">
-            <button class="suite-button active" onclick="showSuite('house')">Norms House & Pool</button>
+            <button class="suite-button active" onclick="showSuite('house')">House + Pool</button>
             <button class="suite-button" onclick="showSuite('king')">King Suite</button>
             <button class="suite-button" onclick="showSuite('queen')">Queen Suite</button>
         </div>
     </div>
 
-    <!-- NORMS HOUSE & POOL -->
+    <!-- HOUSE & POOL -->
     <div id="house" class="suite-content active">
         <div class="title-wrapper">
-            <h1 class="suite-title">Norms House & Pool</h1>
+            <h1 class="suite-title">House + Pool</h1>
+            <div class="designer-text">Designed and created by Norm Jones</div>
             <div class="location">Douglas, Michigan</div>
         </div>
 
         <div class="quick-stats">
-            <span>Full Home</span> 
             <span>Multiple Bedrooms</span> 
             <span>Premium Amenities</span> 
-            <span><span class="gold-accent">★ 5.0</span> Exceptional Property</span>
         </div>
 
         <div class="section-block description">
@@ -450,7 +383,7 @@
             <div class="amenities-grid">
                 <div class="amenity-item">
                     <h4>Resort Pool</h4>
-                    <p>Crystal-clear heated swimming pool</p>
+                    <p>Resort-style saltwater heated pool</p>
                 </div>
                 <div class="amenity-item">
                     <h4>Outdoor Dining</h4>
@@ -466,10 +399,6 @@
                 </div>
             </div>
         </div>
-
-        <div class="booking-section">
-            <a href="#" class="book-button">Reserve Your Stay</a>
-        </div>
     </div>
 
     <!-- KING SUITE -->
@@ -483,14 +412,14 @@
             <span>2 Guests</span> 
             <span>1 Bedroom</span> 
             <span>1 Bath</span> 
-            <span><span class="gold-accent">★ 5.0</span> Top-Rated on Airbnb (39 Reviews)</span>
+            <span><span class="gold-accent">★ 5.0</span> Top-Rated on Airbnb</span>
         </div>
 
         <div class="section-block description">
             <h3 class="section-title">A Sophisticated Escape</h3>
             <p>Kick back and relax in this stylish, newly built property's King guest suite featuring a private entrance. Designed for ultimate comfort and relaxation, the large second-floor King Suite has been thoughtfully curated with a small kitchenette, a cozy fireplace, and a beautiful light-filled sitting area.</p>
             <p>Strategically located on the edge of the city limits of Douglas, the suite overlooks a sweeping meadow. It is positioned perfectly for a very short walk to both Lake Michigan and downtown Douglas.</p>
-            <p>Step outside into a true paradise. The entire property features professional, high-end landscaping, enveloped by spectacular, god-like beautiful flowers and lush plants that create a serene, luxurious oasis for your stay.</p>
+            <p>Step outside into a true paradise. The entire property features professional, high-end landscaping, enveloped by beautiful flowers and lush plants that create a serene, luxurious oasis for your stay.</p>
         </div>
         
         <div class="section-block">
@@ -538,10 +467,6 @@
                 </div>
             </div>
         </div>
-
-        <div class="booking-section">
-            <a href="#" class="book-button">Reserve Your Stay</a>
-        </div>
     </div>
 
     <!-- QUEEN SUITE -->
@@ -555,7 +480,7 @@
             <span>2 Guests</span> 
             <span>1 Bedroom</span> 
             <span>1 Bath</span> 
-            <span><span class="gold-accent">★ 4.9</span> Top-Rated on Airbnb (28 Reviews)</span>
+            <span><span class="gold-accent">★ 4.9</span> Top-Rated on Airbnb</span>
         </div>
 
         <div class="section-block description">
@@ -594,16 +519,16 @@
             <h3 class="section-title">Curated Amenities</h3>
             <div class="amenities-grid">
                 <div class="amenity-item">
-                    <h4>Luxury Bedding</h4>
-                    <p>Premium quilted comfort for perfect sleep</p>
+                    <h4>Kitchenette</h4>
+                    <p>Refrigerator, microwave, and Keurig</p>
                 </div>
                 <div class="amenity-item">
-                    <h4>Sitting Area</h4>
-                    <p>Perfect spot for reading and relaxation</p>
+                    <h4>Smart TV & Wi-Fi</h4>
+                    <p>Entertainment and connectivity at your fingertips</p>
                 </div>
                 <div class="amenity-item">
                     <h4>Modern En-Suite</h4>
-                    <p>Sleek bathroom with premium toiletries</p>
+                    <p>Sleek bedroom and premium toiletries</p>
                 </div>
                 <div class="amenity-item">
                     <h4>Garden Views</h4>
@@ -611,36 +536,32 @@
                 </div>
             </div>
         </div>
-
-        <div class="booking-section">
-            <a href="#" class="book-button">Reserve Your Stay</a>
-        </div>
     </div>
 
 </div>
 
-<!-- CONTACT SECTION -->
+<!-- PREMIUM CONTACT SECTION -->
 <div class="contact-section">
     <h2>Get In Touch</h2>
     <div class="contact-grid">
         <div class="contact-item">
-            <h3>Property Name</h3>
+            <h3>Property</h3>
             <p>Summerset Cottage & Suites</p>
         </div>
         <div class="contact-item">
-            <h3>Address</h3>
+            <h3>Location</h3>
             <p>6849 Wiley Road<br>Douglas, MI 49406-0992</p>
         </div>
         <div class="contact-item">
-            <h3>Phone</h3>
+            <h3>Direct Line</h3>
             <p><a href="tel:(616)283-0189">(616) 283-0189</a></p>
         </div>
         <div class="contact-item">
-            <h3>Email</h3>
+            <h3>Inquiries</h3>
             <p><a href="mailto:normjones0529@hotmail.com">normjones0529@hotmail.com</a></p>
         </div>
         <div class="contact-item">
-            <h3>Host</h3>
+            <h3>Your Host</h3>
             <p>Norm Jones</p>
         </div>
     </div>
@@ -648,43 +569,17 @@
 
 <script>
     function showSuite(suite) {
-        // Hide all suite contents
         document.getElementById('king').classList.remove('active');
         document.getElementById('queen').classList.remove('active');
         document.getElementById('house').classList.remove('active');
         
-        // Remove active class from all buttons
         const buttons = document.querySelectorAll('.suite-button');
         buttons.forEach(btn => btn.classList.remove('active'));
         
-        // Show selected suite
         document.getElementById(suite).classList.add('active');
         
-        // Add active class to clicked button
         event.target.classList.add('active');
     }
-
-    // Background Music Control
-    const bgMusic = document.getElementById('bgMusic');
-    const musicToggle = document.getElementById('musicToggle');
-    let isPlaying = true;
- 
-    musicToggle.addEventListener('click', function() {
-        if (isPlaying) {
-            bgMusic.pause();
-            musicToggle.classList.add('muted');
-            isPlaying = false;
-        } else {
-            bgMusic.play();
-            musicToggle.classList.remove('muted');
-            isPlaying = true;
-        }
-    });
-
-    // Autoplay music when page loads
-    bgMusic.play().catch(function(err) {
-        console.log("Autoplay blocked by browser. User can click music button to play.");
-    });
 </script>
 
 </body>
