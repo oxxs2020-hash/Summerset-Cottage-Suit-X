@@ -30,35 +30,27 @@
             margin: 0;
         }
 
-        header {
-            background-image: url('Norms house front.jpeg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center top;
-            background-attachment: fixed;
-            height: 450px;
-            padding: 40px 60px;
-            text-align: left;
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .main-header {
+            padding: 40px 20px;
+            text-align: center;
             border-bottom: 1px solid var(--border-light);
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
+            background-color: var(--primary-bg);
         }
 
-        header h2, header p {
-            position: relative;
-            z-index: 2;
-        }
-
-        header h2 {
+        .main-header h2 {
             font-size: 2.2em;
             letter-spacing: 4px;
             text-transform: uppercase;
             color: var(--text-dark);
         }
 
-        header p {
+        .main-header p {
             margin: 10px 0 0 0;
             font-size: 0.9em;
             letter-spacing: 3px;
@@ -268,7 +260,6 @@
             margin: 0;
         }
 
-        /* Premium Contact Section Redesign */
         .contact-section {
             background-color: #1A1A1A;
             color: #FFFFFF;
@@ -321,7 +312,11 @@
 </head>
 <body>
 
-<header>
+<div class="hero-image">
+    <img src="Norms house front.jpeg" alt="Summerset Cottage & Suites">
+</div>
+
+<header class="main-header">
     <h2>Summerset Cottage & Suites</h2>
     <p>Boutique Retreat</p>
 </header>
@@ -330,7 +325,7 @@
     
     <div class="suite-selector">
         <div class="suite-buttons">
-            <button class="suite-button active" onclick="showSuite('house')">House + Pool</button>
+            <button class="suite-button active" onclick="showSuite('house')">House & Pool</button>
             <button class="suite-button" onclick="showSuite('king')">King Suite</button>
             <button class="suite-button" onclick="showSuite('queen')">Queen Suite</button>
         </div>
@@ -339,7 +334,7 @@
     <!-- HOUSE & POOL -->
     <div id="house" class="suite-content active">
         <div class="title-wrapper">
-            <h1 class="suite-title">House + Pool</h1>
+            <h1 class="suite-title">House & Pool</h1>
             <div class="designer-text">Designed and created by Norm Jones</div>
             <div class="location">Douglas, Michigan</div>
         </div>
@@ -347,6 +342,7 @@
         <div class="quick-stats">
             <span>Multiple Bedrooms</span> 
             <span>Premium Amenities</span> 
+            <span><span class="gold-accent">★</span> Top-Rated on Airbnb</span>
         </div>
 
         <div class="section-block description">
@@ -397,6 +393,14 @@
                     <h4>Full Home Rental</h4>
                     <p>Complete privacy and luxury accommodations</p>
                 </div>
+                <div class="amenity-item">
+                    <h4>Kitchenette</h4>
+                    <p>Nicely equipped with refrigerator, microwave, and Keurig coffee maker.</p>
+                </div>
+                <div class="amenity-item">
+                    <h4>Smart TV & Wi-Fi</h4>
+                    <p>Entertainment and connectivity at your fingertips.</p>
+                </div>
             </div>
         </div>
     </div>
@@ -412,7 +416,7 @@
             <span>2 Guests</span> 
             <span>1 Bedroom</span> 
             <span>1 Bath</span> 
-            <span><span class="gold-accent">★ 5.0</span> Top-Rated on Airbnb</span>
+            <span><span class="gold-accent">★</span> Top-Rated on Airbnb</span>
         </div>
 
         <div class="section-block description">
@@ -459,11 +463,11 @@
                 </div>
                 <div class="amenity-item">
                     <h4>Kitchenette</h4>
-                    <p>Fully equipped with modern appliances</p>
+                    <p>Nicely equipped with refrigerator, microwave, and Keurig coffee maker.</p>
                 </div>
                 <div class="amenity-item">
-                    <h4>Smart TV & WiFi</h4>
-                    <p>Entertainment and connectivity at your fingertips</p>
+                    <h4>Smart TV & Wi-Fi</h4>
+                    <p>Entertainment and connectivity at your fingertips.</p>
                 </div>
             </div>
         </div>
@@ -480,7 +484,7 @@
             <span>2 Guests</span> 
             <span>1 Bedroom</span> 
             <span>1 Bath</span> 
-            <span><span class="gold-accent">★ 4.9</span> Top-Rated on Airbnb</span>
+            <span><span class="gold-accent">★</span> Top-Rated on Airbnb</span>
         </div>
 
         <div class="section-block description">
@@ -520,11 +524,11 @@
             <div class="amenities-grid">
                 <div class="amenity-item">
                     <h4>Kitchenette</h4>
-                    <p>Refrigerator, microwave, and Keurig</p>
+                    <p>Nicely equipped with refrigerator, microwave, and Keurig coffee maker.</p>
                 </div>
                 <div class="amenity-item">
                     <h4>Smart TV & Wi-Fi</h4>
-                    <p>Entertainment and connectivity at your fingertips</p>
+                    <p>Entertainment and connectivity at your fingertips.</p>
                 </div>
                 <div class="amenity-item">
                     <h4>Modern En-Suite</h4>
