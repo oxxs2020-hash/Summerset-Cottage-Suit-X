@@ -8,12 +8,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-bg: #FCFCFA;
-            --text-dark: #2C2C2C;
-            --text-muted: #666666;
+            --primary-bg: #F4F1EA; /* Elegant linen/sand background */
+            --content-bg: #FFFFFF;
+            --text-dark: #1A1A1A;
+            --text-muted: #555555;
             --accent-gold: #C5A059;
-            --border-light: #EAEAEA;
-            --form-bg: #242424;
+            --border-light: #E0DDD6;
         }
 
         html {
@@ -37,38 +37,42 @@
             margin: 0;
         }
 
-        /* Focus Accessibility */
         *:focus-visible {
             outline: 2px solid var(--accent-gold);
             outline-offset: 2px;
         }
 
-        /* Combined Hero & Header */
-        .hero-section {
-            position: relative;
-            height: 60vh;
-            min-height: 400px;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('Norms house front.jpeg');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: #FFFFFF;
+        /* Uncropped Image Section */
+        .hero-image {
+            width: 100%;
+            background-color: #000;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
-        .hero-section h2 {
-            font-size: clamp(2em, 5vw, 3.5em);
+        /* Separate Header Area */
+        .main-header {
+            background-color: var(--content-bg);
+            text-align: center;
+            padding: 50px 20px;
+            border-bottom: 1px solid var(--border-light);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+        }
+
+        .main-header h2 {
+            font-size: clamp(2em, 5vw, 3em);
             letter-spacing: 4px;
             text-transform: uppercase;
+            color: var(--text-dark);
             margin-bottom: 10px;
-            color: #FFFFFF;
         }
 
-        .hero-section p {
-            font-size: clamp(0.9em, 2vw, 1.2em);
+        .main-header p {
+            font-size: clamp(0.9em, 2vw, 1.1em);
             letter-spacing: 3px;
             color: var(--accent-gold);
             text-transform: uppercase;
@@ -86,7 +90,7 @@
         .suite-selector {
             position: sticky;
             top: 0;
-            background-color: rgba(252, 252, 250, 0.95);
+            background-color: rgba(244, 241, 234, 0.95);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             text-align: center;
@@ -104,9 +108,9 @@
         }
 
         .suite-button {
-            background-color: #FFFFFF;
+            background-color: transparent;
             color: var(--text-dark);
-            border: 1px solid var(--border-light);
+            border: 1px solid var(--text-dark);
             padding: 12px 25px;
             font-size: 0.9em;
             letter-spacing: 2px;
@@ -122,7 +126,6 @@
             color: #FFFFFF;
             transform: translateY(-2px);
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            border-color: var(--text-dark);
         }
 
         .suite-content {
@@ -171,9 +174,10 @@
             gap: 30px;
             font-size: 0.9em;
             color: var(--text-dark);
-            background: #FFFFFF;
-            padding: 20px;
+            background: var(--content-bg);
+            padding: 25px;
             border: 1px solid var(--border-light);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
             margin-bottom: 40px;
             letter-spacing: 1px;
             text-transform: uppercase;
@@ -184,7 +188,6 @@
             color: var(--accent-gold);
         }
 
-        /* Testimonial Quote */
         .testimonial-quote {
             text-align: center;
             max-width: 700px;
@@ -249,7 +252,6 @@
             margin: 0 auto 25px auto;
         }
 
-        /* Horizontal Scroll Snap Gallery */
         .photo-gallery {
             display: flex;
             gap: 20px;
@@ -270,7 +272,7 @@
             max-width: 800px;
             object-fit: cover;
             scroll-snap-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
             transition: transform 0.4s ease;
         }
 
@@ -286,10 +288,11 @@
         }
 
         .host-banner {
-            background-color: #FFFFFF;
+            background-color: var(--content-bg);
             padding: 50px 40px;
             text-align: center;
             border: 1px solid var(--border-light);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
             margin-bottom: 80px;
         }
 
@@ -314,16 +317,17 @@
         }
 
         .amenity-item {
-            background: #FFFFFF;
+            background: var(--content-bg);
             padding: 40px 30px;
             border: 1px solid var(--border-light);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
             text-align: center;
             transition: transform 0.3s ease, border-color 0.3s ease;
         }
 
         .amenity-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
             border-color: var(--accent-gold);
         }
 
@@ -342,109 +346,104 @@
             margin: 0;
         }
 
-        /* Lead Capture Form Section */
+        /* Luxury Contact Section */
         .contact-section {
-            background-color: #1A1A1A;
+            background-color: #0A0A0A;
             color: #FFFFFF;
-            padding: 80px 20px;
-            margin-top: 60px;
+            padding: 120px 20px;
+            margin-top: 80px;
+            border-top: 4px solid var(--accent-gold);
+            text-align: center;
         }
 
-        .contact-container {
+        .contact-header h2 {
+            font-size: clamp(2.5em, 5vw, 3.5em);
+            margin-bottom: 15px;
+            color: #FFFFFF;
+        }
+
+        .contact-header p {
+            font-size: 1.1em;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            margin-bottom: 60px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 50px;
             max-width: 1000px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 60px;
         }
 
-        @media (max-width: 768px) {
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
+        .contact-item {
+            padding: 20px;
         }
 
-        .contact-info h2 {
-            font-size: clamp(2em, 4vw, 2.8em);
-            margin-bottom: 30px;
+        .contact-item h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85em;
+            letter-spacing: 3px;
+            text-transform: uppercase;
             color: var(--accent-gold);
+            margin-bottom: 15px;
+            font-weight: 500;
         }
 
-        .contact-info p {
-            color: #CCCCCC;
-            margin-bottom: 20px;
+        .contact-item p {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3em;
+            color: #E0E0E0;
+            line-height: 1.6;
         }
 
-        .contact-info a {
+        .contact-item a {
             color: #FFFFFF;
             text-decoration: none;
             transition: color 0.3s;
+            position: relative;
         }
 
-        .contact-info a:hover {
+        .contact-item a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--accent-gold);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item a:hover {
             color: var(--accent-gold);
         }
 
-        .lead-form {
-            background: var(--form-bg);
-            padding: 40px;
-            border: 1px solid #333;
+        .contact-item a:hover::after {
+            transform: scaleX(1);
         }
 
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group input, .form-group select, .form-group textarea {
-            width: 100%;
-            padding: 15px;
-            background: #1A1A1A;
-            border: 1px solid #444;
-            color: #FFF;
-            font-family: 'Montserrat', sans-serif;
-            box-sizing: border-box;
-            transition: border-color 0.3s ease, background-color 0.3s ease;
-        }
-
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent-gold);
-            background-color: #2a2a2a;
-        }
-
-        .submit-btn {
-            background: var(--accent-gold);
-            color: #FFF;
-            border: none;
-            padding: 15px 30px;
-            width: 100%;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background 0.3s, transform 0.2s;
-        }
-
-        .submit-btn:hover {
-            background: #B38E4A;
-            transform: translateY(-2px);
-        }
-
-        /* Footer */
         .site-footer {
-            background-color: #111111;
-            color: #777777;
+            background-color: #050505;
+            color: #555555;
             text-align: center;
-            padding: 25px 20px;
+            padding: 30px 20px;
             font-size: 0.85em;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             text-transform: uppercase;
         }
     </style>
 </head>
 <body>
 
-<header class="hero-section">
+<div class="hero-image">
+    <img src="Norms house front.jpeg" alt="Summerset Cottage & Suites">
+</div>
+
+<header class="main-header">
     <h2>Summerset Cottage & Suites</h2>
     <p>Boutique Retreat</p>
 </header>
@@ -701,41 +700,33 @@
 
 </main>
 
-<!-- CONTACT SECTION WITH FORM -->
 <section id="contact" class="contact-section">
-    <div class="contact-container">
-        <div class="contact-info">
-            <h2>Get In Touch</h2>
-            <p><strong>Property:</strong> Summerset Cottage & Suites</p>
-            <p><strong>Location:</strong> 6849 Wiley Road<br>Douglas, MI 49406-0992</p>
-            <p><strong>Direct Line:</strong> <a href="tel:(616)283-0189">(616) 283-0189</a></p>
-            <p><strong>Inquiries:</strong> <a href="mailto:normjones0529@hotmail.com">normjones0529@hotmail.com</a></p>
-            <p><strong>Your Host:</strong> Norm Jones</p>
+    <div class="contact-header">
+        <h2>Get In Touch</h2>
+        <p>Reserve Your Stay</p>
+    </div>
+    
+    <div class="contact-grid">
+        <div class="contact-item">
+            <h3>Property</h3>
+            <p>Summerset Cottage & Suites</p>
         </div>
-        
-        <form class="lead-form" action="mailto:normjones0529@hotmail.com" method="POST" enctype="text/plain">
-            <div class="form-group">
-                <input type="text" name="Name" placeholder="Your Name" required aria-label="Your Name">
-            </div>
-            <div class="form-group">
-                <input type="email" name="Email" placeholder="Your Email Address" required aria-label="Your Email Address">
-            </div>
-            <div class="form-group">
-                <select name="Suite_Preference" aria-label="Suite Preference">
-                    <option value="">Select Suite Preference</option>
-                    <option value="House & Pool">House & Pool</option>
-                    <option value="King Suite">King Suite</option>
-                    <option value="Queen Suite">Queen Suite</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <input type="text" name="Dates" placeholder="Desired Dates (e.g., Oct 12 - Oct 15)" aria-label="Desired Dates">
-            </div>
-            <div class="form-group">
-                <textarea name="Message" rows="4" placeholder="Additional Details or Questions..." aria-label="Message"></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Send Inquiry</button>
-        </form>
+        <div class="contact-item">
+            <h3>Location</h3>
+            <p>6849 Wiley Road<br>Douglas, MI 49406-0992</p>
+        </div>
+        <div class="contact-item">
+            <h3>Direct Line</h3>
+            <p><a href="tel:(616)283-0189">(616) 283-0189</a></p>
+        </div>
+        <div class="contact-item">
+            <h3>Inquiries</h3>
+            <p><a href="mailto:normjones0529@hotmail.com">normjones0529@hotmail.com</a></p>
+        </div>
+        <div class="contact-item">
+            <h3>Your Host</h3>
+            <p>Norm Jones</p>
+        </div>
     </div>
 </section>
 
@@ -754,13 +745,11 @@
         
         document.getElementById(suite).classList.add('active');
         
-        // Find the specific button clicked and make it active
         const clickedButton = document.querySelector(`button[onclick="showSuite('${suite}')"]`);
         if (clickedButton) {
             clickedButton.classList.add('active');
         }
         
-        // Scroll to top of suite content slightly below sticky nav
         window.scrollTo({
             top: document.querySelector('.suite-selector').offsetTop - 20,
             behavior: 'smooth'
