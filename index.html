@@ -42,20 +42,18 @@
             outline-offset: 2px;
         }
 
-        /* Uncropped Image Section */
+        /* Full-width Hero Image Section */
         .hero-image {
             width: 100%;
-            display: flex;
-            justify-content: center;
+            overflow: hidden;
             background-color: var(--primary-bg);
         }
         
         .hero-image img {
             width: 100%;
             height: auto;
-            max-height: 90vh;
-            object-fit: contain;
             display: block;
+            object-fit: cover;
         }
 
         /* Separate Header Area */
@@ -655,6 +653,8 @@
             <h3 class="section-title">Tour the Suite</h3>
             <p style="text-align: center; color: var(--text-muted); font-size: 0.9em; margin-bottom: 20px;">Swipe to view gallery</p>
             <div class="photo-gallery">
+                <img src="NORM QUEEN SUIT/pic tv.jpeg" alt="Queen Suite Fireplace and TV" loading="lazy">
+                <img src="NORM KING SUIT/Screenshot_20260812_234635_Airbnb.jpg" alt="Queen Suite Bedroom & Fireplace" loading="lazy">
                 <img src="NORM QUEEN SUIT/Screenshot_20260812_231400_Samsung Browser.jpg" alt="Queen Suite Image 1" loading="lazy">
                 <img src="NORM QUEEN SUIT/Screenshot_20260812_231404_Samsung Browser.jpg" alt="Queen Suite Image 2" loading="lazy">
                 <img src="NORM QUEEN SUIT/Screenshot_20260812_231407_Samsung Browser.jpg" alt="Queen Suite Image 3" loading="lazy">
@@ -670,7 +670,6 @@
                 <img src="NORM QUEEN SUIT/Screenshot_20260812_231447_Samsung Browser.jpg" alt="Queen Suite Image 13" loading="lazy">
                 <img src="NORM QUEEN SUIT/Screenshot_20260812_231451_Samsung Browser.jpg" alt="Queen Suite Image 14" loading="lazy">
                 <img src="NORM QUEEN SUIT/pic tv3.jpeg" alt="Queen Suite Image 15" loading="lazy">
-                <img src="NORM QUEEN SUIT/pic tv.jpeg" alt="Queen Suite Image 16" loading="lazy">
             </div>
         </div>
 
