@@ -1614,7 +1614,7 @@
         </a>
 
         <div class="nav-menu" id="nav-menu">
-
+            <button class="nav-link-btn active" onclick="showSuite('house', true)" id="nav-btn-house">House &amp; Pool</button>
             <button class="nav-link-btn" onclick="showSuite('king', true)" id="nav-btn-king">King Suite</button>
             <button class="nav-link-btn" onclick="showSuite('queen', true)" id="nav-btn-queen">Queen Suite</button>
             <a href="#comparison" class="nav-link-btn">Compare</a>
@@ -2105,7 +2105,13 @@
 
         <!-- Suite Selector Grid -->
         <div class="suite-toggle-grid">
-
+            <div class="suite-toggle-item active" data-suite="house" onclick="setHubSuite('house')">
+                <div class="suite-toggle-title">
+                    <span>House &amp; Pool</span>
+                    <span class="suite-toggle-badge"><svg class="star-icon" style="width:13px;height:13px;" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg> 5.0 Superhost</span>
+                </div>
+                <div class="suite-toggle-desc">2 Suites &bull; Heated Pool &bull; Up to 4 Guests</div>
+            </div>
 
             <div class="suite-toggle-item" data-suite="king" onclick="setHubSuite('king')">
                 <div class="suite-toggle-title">
@@ -2321,7 +2327,7 @@
     // 1. NAVIGATION & SUITE TAB CONTROLLER
     // ========================================================
     function showSuite(suite, shouldScroll) {
-        const suites = ['king', 'queen'];
+        const suites = ['house', 'king', 'queen'];
         suites.forEach(s => {
             const el = document.getElementById(s);
             if (el) el.classList.remove('active');
@@ -2445,7 +2451,11 @@
     // 4. MASTER BOOKING HUB CONTROLLER & PARAM-SYNC
     // ========================================================
     const SUITE_DATA = {
-
+        house: {
+            name: 'House & Pool',
+            airbnbId: '1436142729628334485',
+            maxGuests: 4
+        },
         king: {
             name: 'The King Suite',
             airbnbId: '1436142729628334485',
@@ -2459,7 +2469,7 @@
     };
 
     const bookingHubState = {
-        suite: 'king',
+        suite: 'house',
         adults: 2,
         children: 0
     };
