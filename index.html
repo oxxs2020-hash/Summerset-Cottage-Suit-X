@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Summerset Cottage & Suites</title>
+    <title>Summerset Cottage &amp; Suites | Boutique Luxury Retreat in Douglas, Michigan</title>
+    <meta name="description" content="Experience boutique luxury in Douglas, Michigan. Offering 2 private suites, resort-style heated saltwater pool, and 2-acre botanic grounds. Book direct and save 10%.">
+
     <!-- Preload Critical Above-The-Fold Assets for Instant Loading -->
     <link rel="preload" as="image" href="Norms house front.jpeg" fetchpriority="high">
     <link rel="preload" as="image" href="butterfly-left.svg" type="image/svg+xml">
@@ -12,41 +14,227 @@
     <!-- Optimized Non-blocking Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript>
-        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     </noscript>
+
     <style>
         :root {
             --primary-bg: #FCFCFA;
-            --text-dark: #2C2C2C;
-            --text-muted: #666666;
+            --surface-bg: #FFFFFF;
+            --text-dark: #242422;
+            --text-body: #4A4A46;
+            --text-muted: #72726E;
             --accent-gold: #C5A059;
-            --border-light: #EAEAEA;
+            --accent-gold-dark: #A3803C;
+            --accent-gold-light: #F7EEDB;
+            --border-light: #E8E6E1;
+            --border-subtle: #F0EEEA;
+            --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.04);
+            --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.07);
+            --shadow-lg: 0 20px 45px rgba(0, 0, 0, 0.11);
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 16px;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
         }
 
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 80px;
         }
 
         body {
             font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             margin: 0;
             padding: 0;
-            color: var(--text-dark);
+            color: var(--text-body);
             background-color: var(--primary-bg);
-            line-height: 1.85;
-            font-weight: 350;
+            line-height: 1.8;
+            font-weight: 400;
             -webkit-font-smoothing: antialiased;
         }
 
-        h1, h2, h3, h4 {
-            font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+        h1, h2, h3, h4, h5 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
             font-weight: 500;
+            color: var(--text-dark);
             margin: 0;
+            line-height: 1.25;
         }
 
+        a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            transition: color 0.25s ease, opacity 0.25s ease;
+        }
+
+        a:hover {
+            color: var(--accent-gold-dark);
+        }
+
+        /* ----------------------------------------------------
+           1. STICKY GLASSMORPHIC NAVIGATION BAR
+        ---------------------------------------------------- */
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(252, 252, 250, 0.94);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(232, 230, 225, 0.85);
+            transition: all 0.3s ease;
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .nav-brand {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+
+        .nav-brand-title {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.35em;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-dark);
+        }
+
+        .nav-brand-subtitle {
+            font-size: 0.72em;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            font-weight: 500;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-link-btn {
+            background: transparent;
+            border: none;
+            padding: 8px 14px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.85em;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            cursor: pointer;
+            border-radius: var(--radius-sm);
+            transition: all 0.25s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-link-btn:hover {
+            color: var(--text-dark);
+            background: rgba(197, 160, 89, 0.08);
+        }
+
+        .nav-link-btn.active {
+            color: var(--accent-gold-dark);
+            font-weight: 600;
+            background: rgba(197, 160, 89, 0.12);
+        }
+
+        .nav-cta-btn {
+            background: var(--accent-gold);
+            color: #FFFFFF !important;
+            padding: 10px 20px;
+            border-radius: var(--radius-sm);
+            font-size: 0.82em;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px rgba(197, 160, 89, 0.28);
+            flex-shrink: 0;
+        }
+
+        .nav-cta-btn:hover {
+            background: var(--accent-gold-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(197, 160, 89, 0.38);
+        }
+
+        .nav-badge-save {
+            background: rgba(255, 255, 255, 0.22);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.85em;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-sm);
+            padding: 8px;
+            cursor: pointer;
+            color: var(--text-dark);
+        }
+
+        @media (max-width: 960px) {
+            .nav-menu {
+                display: none;
+            }
+            .mobile-menu-toggle {
+                display: block;
+            }
+            .nav-menu.open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 72px;
+                left: 0;
+                right: 0;
+                background: rgba(252, 252, 250, 0.98);
+                backdrop-filter: blur(16px);
+                border-bottom: 1px solid var(--border-light);
+                padding: 20px;
+                gap: 12px;
+                box-shadow: var(--shadow-md);
+            }
+            .nav-menu.open .nav-link-btn {
+                width: 100%;
+                justify-content: flex-start;
+                padding: 12px 16px;
+            }
+        }
+
+        /* ----------------------------------------------------
+           2. HERO & BRAND HEADER
+        ---------------------------------------------------- */
         .hero-banner-wrap {
             width: 100%;
             background-color: var(--primary-bg);
@@ -61,8 +249,9 @@
             width: 100%;
             max-width: 100%;
             height: auto;
+            aspect-ratio: 16 / 9;
             display: block;
-            object-fit: contain;
+            object-fit: cover;
         }
 
         .brand-header {
@@ -73,7 +262,7 @@
         }
 
         .brand-header h1 {
-            font-size: clamp(1.8em, 4vw, 2.6em);
+            font-size: clamp(2em, 4.5vw, 3em);
             letter-spacing: 4px;
             text-transform: uppercase;
             color: var(--text-dark);
@@ -101,10 +290,6 @@
             vertical-align: middle;
             filter: drop-shadow(0 3px 10px rgba(245, 158, 11, 0.4));
             cursor: pointer;
-            pointer-events: auto;
-            will-change: transform, filter;
-            -webkit-transform-origin: center center;
-            transform-origin: center center;
             transition: filter 0.4s ease, transform 0.4s ease;
         }
 
@@ -118,130 +303,107 @@
         }
 
         @keyframes realisticButterflyFloatLeft {
-            0% {
-                transform: translateY(0px) rotate(0deg) scale(1) scaleX(1);
-            }
-            25% {
-                transform: translateY(-5px) rotate(3deg) scale(1.04) scaleX(0.92);
-            }
-            50% {
-                transform: translateY(-9px) rotate(-2deg) scale(1.06) scaleX(1.04);
-            }
-            75% {
-                transform: translateY(-4px) rotate(2deg) scale(1.02) scaleX(0.94);
-            }
-            100% {
-                transform: translateY(0px) rotate(0deg) scale(1) scaleX(1);
-            }
+            0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
+            50% { transform: translateY(-8px) rotate(-2deg) scale(1.05); }
         }
 
         @keyframes realisticButterflyFloatRight {
-            0% {
-                transform: translateY(0px) rotate(0deg) scale(1) scaleX(1);
-            }
-            25% {
-                transform: translateY(-5px) rotate(-3deg) scale(1.04) scaleX(0.92);
-            }
-            50% {
-                transform: translateY(-9px) rotate(2deg) scale(1.06) scaleX(1.04);
-            }
-            75% {
-                transform: translateY(-4px) rotate(-2deg) scale(1.02) scaleX(0.94);
-            }
-            100% {
-                transform: translateY(0px) rotate(0deg) scale(1) scaleX(1);
-            }
+            0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
+            50% { transform: translateY(-8px) rotate(2deg) scale(1.05); }
         }
 
-        .retreat-subtitle:hover .butterfly-left,
-        .header-butterfly.butterfly-left:hover {
-            transform: translateY(-10px) scale(1.18) rotate(-6deg) !important;
-            filter: drop-shadow(0 8px 22px rgba(245, 158, 11, 0.75));
-        }
-
-        .retreat-subtitle:hover .butterfly-right,
-        .header-butterfly.butterfly-right:hover {
-            transform: translateY(-10px) scale(1.18) rotate(6deg) !important;
-            filter: drop-shadow(0 8px 22px rgba(245, 158, 11, 0.75));
-        }
-
+        /* ----------------------------------------------------
+           3. MAIN CONTAINER & SUITE TABS
+        ---------------------------------------------------- */
         .container {
-            max-width: 1000px;
-            margin: 60px auto;
-            padding: 0 40px;
+            max-width: 1100px;
+            margin: 40px auto 80px auto;
+            padding: 0 24px;
         }
 
         .suite-selector {
             text-align: center;
-            margin: 0 0 60px 0;
-            padding: 20px 0;
+            margin: 0 0 50px 0;
+            padding: 10px 0 25px 0;
             border-bottom: 1px solid var(--border-light);
         }
 
         .suite-buttons {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 16px;
             flex-wrap: wrap;
         }
 
         .suite-button {
-            background-color: #FFFFFF;
+            background-color: var(--surface-bg);
             color: var(--text-dark);
-            border: 2px solid var(--accent-gold);
-            padding: 12px 30px;
-            font-size: 0.95em;
+            border: 1.5px solid var(--border-light);
+            padding: 14px 28px;
+            font-size: 0.9em;
             letter-spacing: 2px;
             text-transform: uppercase;
             cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: 'Playfair Display', serif;
-            font-weight: 400;
+            transition: all 0.25s ease;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 500;
+            border-radius: var(--radius-sm);
         }
 
         .suite-button:hover {
-            background-color: var(--accent-gold);
-            color: #FFFFFF;
+            border-color: var(--accent-gold);
+            color: var(--accent-gold-dark);
+            background: rgba(197, 160, 89, 0.04);
+            transform: translateY(-2px);
         }
 
         .suite-button.active {
             background-color: var(--accent-gold);
+            border-color: var(--accent-gold);
             color: #FFFFFF;
+            font-weight: 600;
+            box-shadow: 0 4px 14px rgba(197, 160, 89, 0.3);
         }
 
         .suite-content {
             display: none;
+            animation: fadeIn 0.4s ease;
         }
 
         .suite-content.active {
             display: block;
         }
 
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         .title-wrapper {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
 
         .suite-title {
-            font-size: 3.5em;
+            font-size: clamp(2.4em, 5vw, 3.4em);
             color: var(--text-dark);
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .creator-tag {
-            font-family: 'Cormorant Garamond', 'Playfair Display', serif;
-            font-size: 1.35em;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.3em;
             font-style: italic;
             font-weight: 500;
-            color: var(--accent-gold);
+            color: var(--accent-gold-dark);
             letter-spacing: 1px;
-            margin: 4px 0 8px 0;
+            margin: 4px 0 6px 0;
         }
 
         .location {
             color: var(--text-muted);
-            font-size: 0.95em;
-            letter-spacing: 2px;
+            font-size: 0.88em;
+            letter-spacing: 2.5px;
             text-transform: uppercase;
         }
 
@@ -249,57 +411,40 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 40px;
-            font-size: 0.95em;
+            gap: 30px;
+            font-size: 0.9em;
             color: var(--text-muted);
-            padding: 25px 0;
+            padding: 20px 0;
             border-top: 1px solid var(--border-light);
             border-bottom: 1px solid var(--border-light);
-            margin-bottom: 60px;
+            margin-bottom: 50px;
             letter-spacing: 1px;
             text-transform: uppercase;
         }
 
         .quick-stats span {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .gold-accent {
-            color: #E5A524;
-            font-weight: 500;
             display: inline-flex;
             align-items: center;
-            gap: 4px;
+            gap: 6px;
         }
 
         .star-icon {
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             fill: #F5B027;
-            filter: drop-shadow(0 2px 4px rgba(245, 176, 39, 0.35));
             display: inline-block;
-            vertical-align: -3px;
-            flex-shrink: 0;
-            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .quick-stats span:hover .star-icon,
-        .star-icon:hover {
-            transform: scale(1.25) rotate(12deg);
+            vertical-align: -2px;
         }
 
         .section-block {
-            margin-bottom: 80px;
+            margin-bottom: 70px;
         }
 
         .section-title {
-            font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
-            font-size: 2.5em;
+            font-size: 2.3em;
             font-weight: 600;
             letter-spacing: 0.5px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             color: var(--text-dark);
             text-align: center;
         }
@@ -307,143 +452,57 @@
         .section-title::after {
             content: '';
             display: block;
-            width: 45px;
+            width: 40px;
             height: 2px;
             background-color: var(--accent-gold);
-            margin: 18px auto 0;
+            margin: 16px auto 0;
         }
 
         .description p {
             text-align: center;
-            font-family: 'Lora', 'Plus Jakarta Sans', Georgia, serif;
-            font-size: 1.12em;
-            font-weight: 400;
-            color: #4A4A46;
-            line-height: 1.95;
-            max-width: 780px;
-            margin: 0 auto 24px auto;
-            letter-spacing: 0.15px;
+            font-size: 1.1em;
+            color: var(--text-body);
+            line-height: 1.9;
+            max-width: 800px;
+            margin: 0 auto 20px auto;
         }
 
         .description p:first-of-type {
-            font-size: 1.24em;
-            color: #282826;
-            font-weight: 400;
-            line-height: 1.9;
-        }
-
-        /* Direct Booking Benefit Callout Banner */
-        .direct-booking-banner {
-            background: linear-gradient(135deg, #FAF7F0 0%, #FFFFFF 100%);
-            border: 1px solid rgba(197, 160, 89, 0.38);
-            border-left: 4px solid var(--accent-gold);
-            border-radius: 12px;
-            padding: 24px 28px;
-            margin: 0 0 28px 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 24px;
-            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
-            text-align: left;
-        }
-
-        .direct-booking-content {
-            flex: 1;
-        }
-
-        .direct-booking-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: rgba(197, 160, 89, 0.14);
-            color: #9C7730;
-            font-size: 0.76em;
-            font-weight: 600;
-            letter-spacing: 1.4px;
-            text-transform: uppercase;
-            padding: 4px 12px;
-            border-radius: 20px;
-            margin-bottom: 8px;
-        }
-
-        .direct-booking-content h4 {
-            font-family: 'Cormorant Garamond', 'Playfair Display', serif;
-            font-size: 1.55em;
-            font-weight: 600;
+            font-size: 1.22em;
             color: var(--text-dark);
-            margin: 0 0 6px 0;
-            letter-spacing: 0.3px;
+            line-height: 1.85;
         }
 
-        .direct-booking-content p {
-            margin: 0;
-            font-size: 0.96em;
-            color: #585854;
-            line-height: 1.6;
+        /* ----------------------------------------------------
+           4. INTERACTIVE PHOTO CAROUSEL & LIGHTBOX CONTROLS
+        ---------------------------------------------------- */
+        .gallery-container {
+            position: relative;
+            margin: 40px 0 20px 0;
         }
 
-        .direct-booking-content strong {
-            color: #9C7730;
-            font-weight: 600;
-        }
-
-        .direct-contact-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background-color: var(--accent-gold);
-            color: #FFFFFF !important;
-            padding: 13px 22px;
-            border-radius: 6px;
-            font-size: 0.88em;
-            font-weight: 500;
-            letter-spacing: 1px;
-            text-decoration: none;
-            text-transform: uppercase;
-            white-space: nowrap;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(197, 160, 89, 0.25);
-            flex-shrink: 0;
-        }
-
-        .direct-contact-btn:hover {
-            background-color: #B38E46;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 18px rgba(197, 160, 89, 0.4);
-        }
-
-        @media (max-width: 768px) {
-            .direct-booking-banner {
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 20px;
-                gap: 16px;
-            }
-            .direct-contact-btn {
-                width: 100%;
-                justify-content: center;
-                box-sizing: border-box;
-            }
+        .gallery-wrapper {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: var(--radius-md);
         }
 
         .photo-gallery {
             display: flex;
-            gap: 30px;
+            gap: 24px;
             overflow-x: auto;
-            scroll-snap-type: x proximity;
-            padding: 40px 15%;
-            margin-top: 40px;
-            margin-bottom: 30px;
-            perspective: 1200px;
-            perspective-origin: center center;
-            transform-style: preserve-3d;
+            scroll-snap-type: x mandatory;
+            padding: 30px 10px;
+            scroll-behavior: smooth;
             -ms-overflow-style: none;
             scrollbar-width: none;
             cursor: grab;
             user-select: none;
-            -webkit-user-select: none;
-            scroll-behavior: smooth;
+        }
+
+        .photo-gallery::-webkit-scrollbar {
+            display: none;
         }
 
         .photo-gallery.grabbing {
@@ -452,80 +511,257 @@
             scroll-snap-type: none;
         }
 
-        .photo-gallery::-webkit-scrollbar {
-            display: none;
-        }
-
-        .photo-gallery img {
-            flex: 0 0 75vw;
-            max-width: 580px;
-            height: 380px;
-            object-fit: cover;
-            border-radius: 8px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        .gallery-slide-item {
+            flex: 0 0 78vw;
+            max-width: 620px;
             scroll-snap-align: center;
-            transform-origin: center center;
-            will-change: transform, opacity;
-            -webkit-user-drag: none;
-            user-select: none;
-            transition: box-shadow 0.3s ease;
+            position: relative;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            cursor: zoom-in;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        @media (min-width: 768px) {
-            .photo-gallery {
-                gap: 40px;
-                padding: 50px 20%;
-            }
-            .photo-gallery img {
-                flex: 0 0 540px;
-                height: 420px;
-            }
+        .gallery-slide-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
         }
 
+        .gallery-slide-item img {
+            width: 100%;
+            height: 400px;
+            aspect-ratio: 16 / 10;
+            object-fit: cover;
+            display: block;
+            pointer-events: none;
+        }
+
+        .gallery-zoom-badge {
+            position: absolute;
+            bottom: 14px;
+            right: 14px;
+            background: rgba(0, 0, 0, 0.65);
+            color: #FFFFFF;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.76em;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            backdrop-filter: blur(4px);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            pointer-events: none;
+        }
+
+        /* Carousel Navigation Buttons */
+        .gallery-ctrl-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid var(--border-light);
+            color: var(--text-dark);
+            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: var(--shadow-md);
+            transition: all 0.25s ease;
+        }
+
+        .gallery-ctrl-btn:hover {
+            background: var(--accent-gold);
+            color: #FFFFFF;
+            border-color: var(--accent-gold);
+            transform: translateY(-50%) scale(1.08);
+        }
+
+        .gallery-ctrl-btn.prev {
+            left: -18px;
+        }
+
+        .gallery-ctrl-btn.next {
+            right: -18px;
+        }
+
+        .gallery-status-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 4px 0 4px;
+            font-size: 0.84em;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+        }
+
+        .gallery-counter {
+            font-weight: 600;
+            color: var(--accent-gold-dark);
+        }
+
+        /* ----------------------------------------------------
+           5. SUITE ACTIONS & DIRECT ADVANTAGE CARD
+        ---------------------------------------------------- */
+        .suite-action-card {
+            background: linear-gradient(135deg, #FAF8F2 0%, #FFFFFF 100%);
+            border: 1.5px solid rgba(197, 160, 89, 0.35);
+            border-radius: var(--radius-lg);
+            padding: 30px 34px;
+            margin: 40px 0;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .suite-action-info {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .suite-action-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(197, 160, 89, 0.15);
+            color: var(--accent-gold-dark);
+            font-size: 0.76em;
+            font-weight: 700;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+
+        .suite-action-info h4 {
+            font-size: 1.7em;
+            margin: 0 0 8px 0;
+            color: var(--text-dark);
+        }
+
+        .suite-action-info p {
+            margin: 0;
+            font-size: 0.98em;
+            color: var(--text-body);
+            line-height: 1.6;
+        }
+
+        .suite-action-buttons {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn-gold-primary {
+            background-color: var(--accent-gold);
+            color: #FFFFFF !important;
+            padding: 13px 24px;
+            border-radius: var(--radius-sm);
+            font-size: 0.88em;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 14px rgba(197, 160, 89, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-gold-primary:hover {
+            background-color: var(--accent-gold-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(197, 160, 89, 0.4);
+        }
+
+        .btn-outline-secondary {
+            background-color: transparent;
+            color: var(--text-dark) !important;
+            border: 1.5px solid var(--border-light);
+            padding: 12px 20px;
+            border-radius: var(--radius-sm);
+            font-size: 0.85em;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.25s ease;
+        }
+
+        .btn-outline-secondary:hover {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold-dark) !important;
+            background: rgba(197, 160, 89, 0.06);
+            transform: translateY(-2px);
+        }
+
+        /* Host Banner */
         .host-banner {
-            background-color: #FFFFFF;
-            padding: 50px 40px;
+            background-color: var(--surface-bg);
+            padding: 40px 30px;
             text-align: center;
             border: 1px solid var(--border-light);
-            margin-bottom: 80px;
+            border-radius: var(--radius-md);
+            margin-bottom: 60px;
         }
 
         .host-banner h3 {
             font-size: 1.6em;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .host-banner p {
-            color: var(--accent-gold);
+            color: var(--accent-gold-dark);
             font-size: 0.85em;
             letter-spacing: 2px;
             text-transform: uppercase;
             margin: 0;
+            font-weight: 600;
         }
 
+        /* Amenities Grid */
         .amenities-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
         }
 
         .amenity-item {
-            background: #FFFFFF;
-            padding: 40px 30px;
+            background: var(--surface-bg);
+            padding: 34px 26px;
             border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
             text-align: center;
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .amenity-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.04);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(197, 160, 89, 0.4);
         }
 
         .amenity-item h4 {
-            font-size: 1.3em;
-            margin-bottom: 15px;
+            font-size: 1.35em;
+            margin-bottom: 10px;
             color: var(--text-dark);
         }
 
@@ -535,94 +771,202 @@
             margin: 0;
         }
 
-        /* Interactive Booking Widget Styles */
-        .booking-section {
-            padding: 30px 0 70px 0;
+        /* ----------------------------------------------------
+           6. SIDE-BY-SIDE SUITE COMPARISON MATRIX
+        ---------------------------------------------------- */
+        .comparison-section {
+            background: #FFFFFF;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            padding: 60px 40px;
+            margin: 80px 0;
+            box-shadow: var(--shadow-sm);
         }
 
-        .booking-widget-card {
-            max-width: 860px;
-            margin: 0 auto;
-            background: #FFFFFF;
-            border: 1px solid var(--accent-gold);
-            border-radius: 12px;
-            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06), 0 2px 10px rgba(197, 160, 89, 0.08);
-            padding: 40px 35px;
+        .comparison-header {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 50px auto;
+        }
+
+        .comparison-header h2 {
+            font-size: 2.6em;
+            margin-bottom: 12px;
+        }
+
+        .comparison-header p {
+            color: var(--text-muted);
+            font-size: 1.05em;
+            margin: 0;
+        }
+
+        .comparison-table-wrapper {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            min-width: 750px;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 18px 20px;
             text-align: left;
+            border-bottom: 1px solid var(--border-subtle);
+            font-size: 0.96em;
+        }
+
+        .comparison-table thead th {
+            background: #FAF8F4;
+            color: var(--text-dark);
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.35em;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid var(--accent-gold);
+            vertical-align: bottom;
+        }
+
+        .comparison-table thead th:first-child {
+            border-top-left-radius: var(--radius-sm);
+            width: 28%;
+        }
+
+        .comparison-table thead th:last-child {
+            border-top-right-radius: var(--radius-sm);
+        }
+
+        .comparison-table th.highlight-col,
+        .comparison-table td.highlight-col {
+            background: rgba(197, 160, 89, 0.05);
+        }
+
+        .comparison-table td.feature-title {
+            font-weight: 600;
+            color: var(--text-dark);
+            background: #FAFAFA;
+        }
+
+        .comparison-badge-pill {
+            display: inline-block;
+            background: rgba(197, 160, 89, 0.15);
+            color: var(--accent-gold-dark);
+            font-size: 0.78em;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .table-action-btn {
+            padding: 8px 14px;
+            font-size: 0.82em;
+            font-weight: 600;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            border-radius: var(--radius-sm);
+            display: inline-block;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .table-action-btn.gold {
+            background: var(--accent-gold);
+            color: #FFFFFF !important;
+        }
+
+        .table-action-btn.gold:hover {
+            background: var(--accent-gold-dark);
+            transform: translateY(-2px);
+        }
+
+        /* ----------------------------------------------------
+           7. CONSOLIDATED RESERVATION & BOOKING HUB
+        ---------------------------------------------------- */
+        .booking-hub-section {
+            background: #FFFFFF;
+            border: 1.5px solid var(--accent-gold);
+            border-radius: var(--radius-lg);
+            padding: 50px 45px;
+            margin: 80px 0;
+            box-shadow: var(--shadow-lg);
             position: relative;
             overflow: visible;
         }
 
-        .booking-widget-card::before {
+        .booking-hub-section::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #C5A059 0%, #F5D78E 50%, #C5A059 100%);
-            border-radius: 12px 12px 0 0;
+            height: 6px;
+            background: linear-gradient(90deg, #C5A059 0%, #F7EEDB 50%, #C5A059 100%);
+            border-radius: var(--radius-lg) var(--radius-lg) 0 0;
         }
 
-        .widget-header {
+        .booking-hub-header {
             text-align: center;
-            margin-bottom: 28px;
+            margin-bottom: 36px;
         }
 
-        .widget-header h3 {
-            font-size: 1.85em;
-            color: var(--text-dark);
+        .booking-hub-header h2 {
+            font-size: 2.6em;
             margin-bottom: 8px;
-            letter-spacing: 0.5px;
         }
 
-        .widget-header p {
-            color: var(--accent-gold);
-            font-size: 0.85em;
+        .booking-hub-header p {
+            color: var(--accent-gold-dark);
+            font-size: 0.88em;
             letter-spacing: 2.5px;
             text-transform: uppercase;
+            font-weight: 600;
             margin: 0;
-            font-weight: 400;
         }
 
         .suite-toggle-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 14px;
-            margin-bottom: 28px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin-bottom: 30px;
         }
 
         .suite-toggle-item {
-            background: #FCFCFA;
+            background: #FAF8F4;
             border: 1.5px solid var(--border-light);
-            border-radius: 8px;
-            padding: 14px 16px;
+            border-radius: var(--radius-md);
+            padding: 16px 20px;
             cursor: pointer;
             text-align: left;
             transition: all 0.25s ease;
-            font-family: inherit;
             display: flex;
             flex-direction: column;
             gap: 4px;
-            user-select: none;
         }
 
         .suite-toggle-item:hover {
             border-color: var(--accent-gold);
             background: #FFFFFF;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(197, 160, 89, 0.15);
+            box-shadow: var(--shadow-sm);
         }
 
         .suite-toggle-item.active {
             border-color: var(--accent-gold);
-            background: #FFFDF9;
-            box-shadow: 0 0 0 1px var(--accent-gold), 0 6px 18px rgba(197, 160, 89, 0.16);
+            background: #FFFFFF;
+            box-shadow: 0 0 0 1.5px var(--accent-gold), var(--shadow-sm);
         }
 
         .suite-toggle-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.05em;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.25em;
             font-weight: 600;
             color: var(--text-dark);
             display: flex;
@@ -631,36 +975,25 @@
         }
 
         .suite-toggle-badge {
-            font-family: 'Lato', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 0.72em;
-            color: #C5A059;
-            font-weight: 600;
-            letter-spacing: 0.5px;
+            color: var(--accent-gold-dark);
+            font-weight: 700;
             display: inline-flex;
             align-items: center;
             gap: 3px;
         }
 
         .suite-toggle-desc {
-            font-size: 0.8em;
+            font-size: 0.84em;
             color: var(--text-muted);
-            line-height: 1.4;
         }
 
         .booking-inputs-row {
             display: grid;
-            grid-template-columns: 1fr 1fr 1.2fr;
-            gap: 16px;
-            margin-bottom: 22px;
-        }
-
-        @media (max-width: 768px) {
-            .booking-inputs-row {
-                grid-template-columns: 1fr;
-            }
-            .booking-widget-card {
-                padding: 30px 20px;
-            }
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            margin-bottom: 30px;
         }
 
         .booking-input-group {
@@ -671,57 +1004,56 @@
         }
 
         .booking-input-group label {
-            font-size: 0.75em;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
+            font-size: 0.82em;
             font-weight: 600;
-            color: var(--text-dark);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-muted);
             display: flex;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
         }
 
         .nights-count-badge {
+            background: var(--accent-gold-light);
+            color: var(--accent-gold-dark);
             font-size: 0.85em;
-            color: var(--accent-gold);
-            font-weight: 500;
-            text-transform: none;
-            letter-spacing: 0;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-weight: 700;
         }
 
         .booking-input {
-            background: #FFFFFF;
-            border: 1px solid #D8D8D8;
-            border-radius: 6px;
-            padding: 12px 14px;
+            width: 100%;
+            padding: 14px 16px;
+            border: 1.5px solid var(--border-light);
+            border-radius: var(--radius-sm);
+            font-family: inherit;
             font-size: 0.95em;
             color: var(--text-dark);
-            font-family: 'Lato', sans-serif;
-            transition: border-color 0.2s ease, box-shadow 0.2s ease;
-            outline: none;
-            width: 100%;
-            box-sizing: border-box;
+            background: #FFFFFF;
+            transition: border-color 0.25s ease;
         }
 
         .booking-input:focus {
+            outline: none;
             border-color: var(--accent-gold);
-            box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.2);
+            box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.15);
         }
 
         .guests-btn-trigger {
+            padding: 14px 16px;
+            border: 1.5px solid var(--border-light);
+            border-radius: var(--radius-sm);
+            font-size: 0.95em;
+            color: var(--text-dark);
+            background: #FFFFFF;
+            cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            cursor: pointer;
             user-select: none;
-            background: #FFFFFF;
-            border: 1px solid #D8D8D8;
-            border-radius: 6px;
-            padding: 12px 14px;
-            font-size: 0.95em;
-            color: var(--text-dark);
-            font-family: 'Lato', sans-serif;
-            transition: all 0.2s ease;
+            transition: border-color 0.25s ease;
         }
 
         .guests-btn-trigger:hover,
@@ -730,10 +1062,10 @@
         }
 
         .dropdown-chevron {
-            width: 14px;
-            height: 14px;
+            width: 18px;
+            height: 18px;
             fill: var(--text-muted);
-            transition: transform 0.2s ease;
+            transition: transform 0.25s ease;
         }
 
         .guests-btn-trigger.active .dropdown-chevron {
@@ -741,17 +1073,17 @@
         }
 
         .guests-popup {
+            display: none;
             position: absolute;
             top: calc(100% + 6px);
             left: 0;
             right: 0;
             background: #FFFFFF;
             border: 1px solid var(--border-light);
-            border-radius: 8px;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-            padding: 18px 16px;
-            z-index: 1000;
-            display: none;
+            border-radius: var(--radius-md);
+            padding: 18px;
+            box-shadow: var(--shadow-lg);
+            z-index: 100;
             flex-direction: column;
             gap: 16px;
         }
@@ -767,11 +1099,8 @@
         }
 
         .guests-label-box h5 {
-            margin: 0 0 2px 0;
-            font-size: 0.92em;
-            color: var(--text-dark);
-            font-family: 'Lato', sans-serif;
-            font-weight: 600;
+            font-size: 1.1em;
+            margin: 0;
         }
 
         .guests-label-box span {
@@ -782,58 +1111,122 @@
         .guests-counter {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
         .counter-btn {
-            width: 30px;
-            height: 30px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
-            border: 1px solid #D0D0D0;
+            border: 1px solid var(--border-light);
             background: #FFFFFF;
-            color: var(--text-dark);
+            cursor: pointer;
             font-size: 1.1em;
+            font-weight: 600;
             display: flex;
             align-items: center;
             justify-content: center;
-            cursor: pointer;
             transition: all 0.2s ease;
-            user-select: none;
-            padding: 0;
-            line-height: 1;
         }
 
-        .counter-btn:hover:not(:disabled) {
+        .counter-btn:hover {
             border-color: var(--accent-gold);
-            color: var(--accent-gold);
-            background: #FFFDF9;
-        }
-
-        .counter-btn:disabled {
-            opacity: 0.35;
-            cursor: not-allowed;
+            color: var(--accent-gold-dark);
+            background: var(--accent-gold-light);
         }
 
         .counter-number {
             font-weight: 600;
-            font-size: 0.95em;
-            min-width: 18px;
+            min-width: 20px;
             text-align: center;
-            color: var(--text-dark);
+        }
+
+        /* Dual Action CTA Hierarchy */
+        .booking-cta-dual-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin-top: 24px;
+        }
+
+        .booking-cta-main-gold {
+            background: linear-gradient(135deg, #C5A059 0%, #B38E46 100%);
+            color: #FFFFFF !important;
+            padding: 18px 24px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.94em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            box-shadow: 0 6px 20px rgba(197, 160, 89, 0.35);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .booking-cta-main-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(197, 160, 89, 0.45);
+        }
+
+        .booking-cta-main-gold span.subtext {
+            font-size: 0.78em;
+            font-weight: 400;
+            opacity: 0.92;
+            text-transform: none;
+            letter-spacing: 0.5px;
+        }
+
+        .booking-cta-airbnb-btn {
+            background: #FFFFFF;
+            border: 2px solid #FF385C;
+            color: #FF385C !important;
+            padding: 18px 24px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.94em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .booking-cta-airbnb-btn:hover {
+            background: #FFF5F7;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 56, 92, 0.18);
+        }
+
+        .booking-cta-airbnb-btn span.subtext {
+            font-size: 0.78em;
+            font-weight: 400;
+            color: #717171;
+            text-transform: none;
+            letter-spacing: 0.5px;
         }
 
         .booking-trust-bar {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
+            justify-content: center;
             flex-wrap: wrap;
-            gap: 12px;
-            padding: 12px 18px;
-            background: #FAF8F4;
-            border: 1px solid #F0ECE1;
-            border-radius: 6px;
-            margin-bottom: 24px;
-            font-size: 0.82em;
+            gap: 28px;
+            margin-top: 28px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-light);
+            font-size: 0.85em;
             color: var(--text-muted);
         }
 
@@ -847,142 +1240,328 @@
             width: 18px;
             height: 18px;
             fill: #FF385C;
-            display: inline-block;
-            vertical-align: middle;
-        }
-
-        .booking-cta-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            width: 100%;
-            background-color: var(--accent-gold);
-            color: #FFFFFF;
-            padding: 18px 30px;
-            font-size: 0.95em;
-            letter-spacing: 2.5px;
-            text-transform: uppercase;
-            text-decoration: none;
-            border: 1px solid var(--accent-gold);
-            border-radius: 6px;
-            font-weight: 500;
-            font-family: 'Playfair Display', serif;
-            cursor: pointer;
-            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
-            box-sizing: border-box;
-        }
-
-        .booking-cta-button:hover {
-            background-color: #B38E46;
-            border-color: #B38E46;
-            color: #FFFFFF;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(197, 160, 89, 0.45);
-        }
-
-        .booking-cta-button svg {
-            transition: transform 0.3s ease;
-        }
-
-        .booking-cta-button:hover svg {
-            transform: translateX(4px);
         }
 
         .direct-listings-links {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 24px;
             flex-wrap: wrap;
-            font-size: 0.85em;
-            color: var(--text-muted);
-            margin-top: 16px;
-            text-align: center;
+            gap: 16px;
+            margin-top: 20px;
+            font-size: 0.88em;
         }
 
         .direct-listing-link {
-            color: var(--accent-gold);
+            color: var(--text-dark);
             text-decoration: none;
-            font-weight: 400;
+            font-weight: 600;
             display: inline-flex;
             align-items: center;
-            gap: 4px;
-            border-bottom: 1px dotted var(--accent-gold);
-            transition: color 0.2s ease, border-color 0.2s ease;
+            gap: 6px;
+            padding: 4px 10px;
+            border-radius: var(--radius-sm);
+            background: #F7F5F0;
+            transition: all 0.2s ease;
         }
 
         .direct-listing-link:hover {
-            color: var(--text-dark);
-            border-bottom-style: solid;
+            color: var(--accent-gold-dark);
+            background: var(--accent-gold-light);
         }
 
-        /* Contact Section */
-        .contact-section {
-            background-color: #FFFFFF;
-            padding: 80px 40px;
+        @media (max-width: 768px) {
+            .booking-cta-dual-row {
+                grid-template-columns: 1fr;
+            }
+            .booking-hub-section {
+                padding: 35px 20px;
+            }
+            .comparison-section {
+                padding: 40px 20px;
+            }
+        }
+
+        /* ----------------------------------------------------
+           8. DIRECT INQUIRY MODAL (10% SAVINGS)
+        ---------------------------------------------------- */
+        .modal-backdrop {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-backdrop.open {
+            display: flex;
+        }
+
+        .modal-card {
+            background: #FFFFFF;
+            border-radius: var(--radius-lg);
+            max-width: 540px;
+            width: 100%;
+            padding: 40px 36px;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            animation: modalPop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes modalPop {
+            from { transform: scale(0.92); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #F4F4F4;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dark);
+            transition: all 0.2s ease;
+        }
+
+        .modal-close-btn:hover {
+            background: #EAEAEA;
+        }
+
+        .modal-header {
             text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .modal-header h3 {
+            font-size: 2em;
+            margin-bottom: 6px;
+        }
+
+        .modal-summary-box {
+            background: #FAF8F2;
+            border: 1px solid rgba(197, 160, 89, 0.35);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+
+        .modal-summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            font-size: 0.92em;
+            border-bottom: 1px dashed rgba(197, 160, 89, 0.25);
+        }
+
+        .modal-summary-row:last-child {
+            border-bottom: none;
+            font-weight: 700;
+            color: var(--accent-gold-dark);
+            padding-top: 10px;
+        }
+
+        .modal-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .modal-btn-email {
+            background: var(--accent-gold);
+            color: #FFFFFF !important;
+            padding: 14px;
+            border-radius: var(--radius-sm);
+            text-align: center;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: background 0.25s ease;
+        }
+
+        .modal-btn-email:hover {
+            background: var(--accent-gold-dark);
+        }
+
+        .modal-btn-tel {
+            background: #FFFFFF;
+            color: var(--text-dark) !important;
+            border: 1.5px solid var(--border-light);
+            padding: 13px;
+            border-radius: var(--radius-sm);
+            text-align: center;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        .modal-btn-tel:hover {
+            border-color: var(--accent-gold);
+            background: #FAF8F2;
+        }
+
+        /* ----------------------------------------------------
+           9. FULLSCREEN LIGHTBOX MODAL
+        ---------------------------------------------------- */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(10px);
+            z-index: 3000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-modal.open {
+            display: flex;
+        }
+
+        .lightbox-inner {
+            position: relative;
+            max-width: 90vw;
+            max-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-img {
+            max-width: 100%;
+            max-height: 78vh;
+            object-fit: contain;
+            border-radius: var(--radius-sm);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+            transition: opacity 0.25s ease;
+        }
+
+        .lightbox-caption {
+            color: #FFFFFF;
+            font-size: 0.95em;
+            margin-top: 14px;
+            text-align: center;
+            letter-spacing: 0.5px;
+            max-width: 700px;
+        }
+
+        .lightbox-ctrl-btn {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #FFFFFF;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8em;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            backdrop-filter: blur(4px);
+        }
+
+        .lightbox-ctrl-btn:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.1);
+        }
+
+        .lightbox-ctrl-btn.close {
+            top: 24px;
+            right: 24px;
+            font-size: 1.3em;
+            width: 44px;
+            height: 44px;
+        }
+
+        .lightbox-ctrl-btn.prev {
+            left: 24px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .lightbox-ctrl-btn.next {
+            right: 24px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        /* ----------------------------------------------------
+           10. CONTACT & LOCATION SECTION
+        ---------------------------------------------------- */
+        .contact-section {
+            background-color: var(--surface-bg);
             border-top: 1px solid var(--border-light);
-            margin-top: 60px;
+            padding: 80px 24px 60px 24px;
+            text-align: center;
         }
 
         .contact-section h2 {
-            font-size: 2.5em;
+            font-size: 2.6em;
             margin-bottom: 50px;
-            color: var(--text-dark);
         }
 
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto 60px auto;
         }
 
         .contact-item h3 {
             font-size: 1.3em;
-            margin-bottom: 15px;
-            color: var(--text-dark);
+            margin-bottom: 8px;
+            color: var(--accent-gold-dark);
         }
 
         .contact-item p {
-            color: var(--text-muted);
-            font-size: 1.05em;
+            color: var(--text-body);
             margin: 0;
+            font-size: 0.95em;
         }
 
-        .contact-item a {
-            color: var(--accent-gold);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .contact-item a:hover {
-            color: var(--text-dark);
-        }
-
-
-        /* Map Section */
         .map-section {
-            max-width: 900px;
-            margin: 50px auto 0 auto;
+            max-width: 1000px;
+            margin: 0 auto 40px auto;
         }
 
         .map-frame-wrapper {
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid var(--accent-gold);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             position: relative;
-            background: #FFFFFF;
+            width: 100%;
+            height: 450px;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-md);
         }
 
         .map-frame-wrapper iframe {
             width: 100%;
-            height: 400px;
+            height: 100%;
             border: 0;
-            display: block;
         }
 
         .map-actions {
@@ -992,17 +1571,16 @@
 
         .map-btn {
             display: inline-block;
-            background-color: transparent;
-            color: var(--accent-gold);
-            border: 1px solid var(--accent-gold);
-            padding: 12px 30px;
+            background-color: var(--surface-bg);
+            color: var(--text-dark);
+            border: 1.5px solid var(--accent-gold);
+            padding: 12px 28px;
             font-size: 0.85em;
             letter-spacing: 2px;
             text-transform: uppercase;
             text-decoration: none;
+            border-radius: var(--radius-sm);
             transition: all 0.3s ease;
-            font-family: 'Lato', sans-serif;
-            font-weight: 400;
         }
 
         .map-btn:hover {
@@ -1010,616 +1588,723 @@
             color: #FFFFFF;
             transform: translateY(-2px);
         }
+
+        footer {
+            background: #1C1C1A;
+            color: #A0A09C;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.88em;
+            letter-spacing: 0.5px;
+        }
+
+        footer a {
+            color: #E2C792;
+        }
     </style>
 </head>
 <body>
 
+<!-- 1. STICKY GLASSMORPHIC NAVIGATION -->
+<nav class="sticky-nav" id="sticky-nav" aria-label="Main Navigation">
+    <div class="nav-inner">
+        <a href="#" class="nav-brand" aria-label="Summerset Cottage &amp; Suites Home">
+            <span class="nav-brand-title">Summerset Cottage</span>
+            <span class="nav-brand-subtitle">Douglas, Michigan</span>
+        </a>
 
+        <div class="nav-menu" id="nav-menu">
+            <button class="nav-link-btn active" onclick="showSuite('house', true)" id="nav-btn-house">House &amp; Pool</button>
+            <button class="nav-link-btn" onclick="showSuite('king', true)" id="nav-btn-king">King Suite</button>
+            <button class="nav-link-btn" onclick="showSuite('queen', true)" id="nav-btn-queen">Queen Suite</button>
+            <a href="#comparison" class="nav-link-btn">Compare</a>
+            <a href="#contact" class="nav-link-btn">Location</a>
+        </div>
+
+        <a href="#booking" class="nav-cta-btn">
+            <span>Book Direct</span>
+            <span class="nav-badge-save">Save 10%</span>
+        </a>
+
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </button>
+    </div>
+</nav>
+
+<!-- 2. HERO IMAGE & BRAND HEADER -->
 <div class="hero-banner-wrap">
-    <img src="Norms house front.jpeg" alt="Summerset Cottage &amp; Suites Front Grounds" class="hero-banner-img" fetchpriority="high">
+    <img src="Norms house front.jpeg" alt="Summerset Cottage &amp; Suites private grounds and residence in Douglas, Michigan" class="hero-banner-img" fetchpriority="high">
 </div>
 
 <header class="brand-header">
-    <h1>Summerset Cottage & Suites</h1>
+    <h1>Summerset Cottage &amp; Suites</h1>
     <p class="retreat-subtitle">
-        <img src="butterfly-left.svg" alt="Yellow Butterfly" class="header-butterfly butterfly-left">
-        <span>Boutique Retreat</span>
-        <img src="butterfly-right.svg" alt="Yellow Butterfly" class="header-butterfly butterfly-right">
+        <img src="butterfly-left.svg" alt="Boutique decorative butterfly" class="header-butterfly butterfly-left">
+        <span>Boutique Luxury Retreat</span>
+        <img src="butterfly-right.svg" alt="Boutique decorative butterfly" class="header-butterfly butterfly-right">
     </p>
 </header>
 
-<div class="container">
+<div class="container" id="suites-anchor">
     
+    <!-- SUITE SELECTION TABS -->
     <div class="suite-selector">
         <div class="suite-buttons">
-            <button class="suite-button active" onclick="showSuite('house')">House & Pool</button>
-            <button class="suite-button" onclick="showSuite('king')">King Suite</button>
-            <button class="suite-button" onclick="showSuite('queen')">Queen Suite</button>
+            <button class="suite-button active" onclick="showSuite('house')">House &amp; Pool</button>
+            <button class="suite-button" onclick="showSuite('king')">The King Suite</button>
+            <button class="suite-button" onclick="showSuite('queen')">The Queen Suite</button>
         </div>
     </div>
 
-    <!-- HOUSE & POOL -->
-    <div id="house" class="suite-content active">
+    <!-- ========================================================
+         SUITE 1: HOUSE & POOL
+    ======================================================== -->
+    <div id="house" class="suite-content active" role="region" aria-labelledby="title-house">
         <div class="title-wrapper">
-            <h2 class="suite-title">House & Pool</h2>
+            <h2 class="suite-title" id="title-house">House &amp; Pool</h2>
             <div class="creator-tag">Designed &amp; Created by Norm Jones</div>
             <div class="location">Douglas, Michigan</div>
         </div>
 
         <div class="quick-stats">
-            <span>Two Suites</span> 
-            <span>Premium Amenities</span> 
-            <span>Top 5<svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg> Rated at Airbnb</span>
+            <span>Two Private Suites</span> 
+            <span>Up to 4 Guests</span> 
+            <span>Private Heated Saltwater Pool</span> 
+            <span>Top 5% Superhost on Airbnb</span>
         </div>
 
         <div class="section-block description">
-            <h3 class="section-title">A Private Paradise</h3>
-            <p>Escape to this stunning property with 2 beautiful private rental suites, featuring a resort-style swimming pool and expansive grounds. Perfect for couples and small groups seeking a retreat with privacy and premium amenities.</p>
-            <p>This exceptional property boasts professionally landscaped gardens with high-end outdoor living spaces, including dining areas and sun lounges overlooking the pristine saltwater pool and meadow.</p>
-            <p>Experience the ultimate in Michigan hospitality with exquisite accommodations, beautiful outdoor spaces, and amenities needed for an unforgettable vacation.</p>
+            <h3 class="section-title">A Private 2-Acre Botanic Oasis</h3>
+            <p>Escape to an extraordinary private retreat featuring two curated luxury suites, a heated saltwater swimming pool, and professionally designed botanic gardens. Ideal for couples traveling together, small families, and extended luxury stays seeking complete seclusion.</p>
+            <p>Enjoy manicured outdoor living spaces with shaded dining pergolas, sun lounges overlooking the meadow, and seamless access to both downtown Douglas and the sandy shores of Lake Michigan.</p>
         </div>
         
+        <!-- Photo Carousel -->
         <div class="section-block">
-            <h3 class="section-title">Explore the Property</h3>
-            <p style="text-align: center; color: var(--text-muted); font-size: 0.9em; margin-bottom: 20px;">Swipe or drag to view gallery</p>
-            <div class="photo-gallery">
-                <img src="NORM HOUSE AND POOL/IMG-20260802-WA0023.jpg" alt="House Property 1" loading="lazy" decoding="async">
-                <img src="NORM HOUSE AND POOL/IMG-20260802-WA0044.jpg" alt="House Property 2" loading="lazy" decoding="async">
-                <img src="NORM HOUSE AND POOL/IMG-20260802-WA0046.jpg" alt="House Property 3" loading="lazy" decoding="async">
-                <img src="NORM HOUSE AND POOL/IMG-20260802-WA0050.jpg" alt="House Property 4" loading="lazy" decoding="async">
-                <img src="NORM HOUSE AND POOL/IMG-20260802-WA0098.jpg" alt="House Property 5" loading="lazy" decoding="async">
-                <img src="NORM HOUSE AND POOL/IMG-20260802-WA0125(1).jpg" alt="House Property 6" loading="lazy" decoding="async">
-                <img src="NORM HOUSE AND POOL/IMG-20260802-WA0157.jpg" alt="House Property 7" loading="lazy" decoding="async">
-                <img src="NORM HOUSE AND POOL/IMG-20260802-WA0184.jpg" alt="House Property 8" loading="lazy" decoding="async">
-                <img src="NORM HOUSE AND POOL/Norms house Yard table.jpeg" alt="Outdoor Dining Area" loading="lazy" decoding="async">
-                <img src="NORM HOUSE AND POOL/Screenshot_20260812_234649_Airbnb.jpg" alt="Pool View 1" loading="lazy" decoding="async">
-                <img src="NORM HOUSE AND POOL/Screenshot_20260812_234652_Airbnb.jpg" alt="Pool View 2" loading="lazy" decoding="async">
+            <h3 class="section-title">Explore the Grounds &amp; Pool</h3>
+            <p style="text-align: center; color: var(--text-muted); font-size: 0.92em; margin-bottom: 12px;">Swipe or use arrows to view gallery &bull; Click any photo to enlarge</p>
+            
+            <div class="gallery-container">
+                <button class="gallery-ctrl-btn prev" onclick="scrollGallery('gallery-house', -1)" aria-label="Previous image">‹</button>
+                <button class="gallery-ctrl-btn next" onclick="scrollGallery('gallery-house', 1)" aria-label="Next image">›</button>
+
+                <div class="gallery-wrapper">
+                    <div class="photo-gallery" id="gallery-house">
+                        <div class="gallery-slide-item" onclick="openLightbox(this)" data-caption="Resort-style heated saltwater swimming pool with expansive sun deck and lounge chairs">
+                            <img src="NORM HOUSE AND POOL/IMG-20260802-WA0023.jpg" alt="Resort-style heated saltwater pool with private sundeck and loungers" loading="eager" decoding="async">
+                            <span class="gallery-zoom-badge">🔍 Zoom</span>
+                        </div>
+                        <div class="gallery-slide-item" onclick="openLightbox(this)" data-caption="Pristine poolside view overlooking lush meadow and manicured gardens">
+                            <img src="NORM HOUSE AND POOL/IMG-20260802-WA0044.jpg" alt="Poolside perspective overlooking meadow grounds" loading="lazy" decoding="async">
+                            <span class="gallery-zoom-badge">🔍 Zoom</span>
+                        </div>
+                        <div class="gallery-slide-item" onclick="openLightbox(this)" data-caption="Outdoor living and dining terrace surrounded by perennial flower beds">
+                            <img src="NORM HOUSE AND POOL/IMG-20260802-WA0046.jpg" alt="Outdoor living terrace and dining garden" loading="lazy" decoding="async">
+                            <span class="gallery-zoom-badge">🔍 Zoom</span>
+                        </div>
+                        <div class="gallery-slide-item" onclick="openLightbox(this)" data-caption="Sun-drenched pool deck with comfortable seating for outdoor relaxation">
+                            <img src="NORM HOUSE AND POOL/IMG-20260802-WA0050.jpg" alt="Sun deck with comfortable outdoor furniture" loading="lazy" decoding="async">
+                            <span class="gallery-zoom-badge">🔍 Zoom</span>
+                        </div>
+                        <div class="gallery-slide-item" onclick="openLightbox(this)" data-caption="Architectural garden walkways and private sitting alcoves">
+                            <img src="NORM HOUSE AND POOL/IMG-20260802-WA0098.jpg" alt="Landscaped walkway through perennial gardens" loading="lazy" decoding="async">
+                            <span class="gallery-zoom-badge">🔍 Zoom</span>
+                        </div>
+                        <div class="gallery-slide-item" onclick="openLightbox(this)" data-caption="Verdant botanical landscaping designed and maintained by host Norm">
+                            <img src="NORM HOUSE AND POOL/IMG-20260802-WA0125(1).jpg" alt="Botanic garden landscaping and flora" loading="lazy" decoding="async">
+                            <span class="gallery-zoom-badge">🔍 Zoom</span>
+                        </div>
+                        <div class="gallery-slide-item" onclick="openLightbox(this)" data-caption="Evening twilight by the illuminated saltwater pool">
+                            <img src="NORM HOUSE AND POOL/IMG-20260802-WA0157.jpg" alt="Poolside ambiance in Douglas Michigan" loading="lazy" decoding="async">
+                            <span class="gallery-zoom-badge">🔍 Zoom</span>
+                        </div>
+                        <div class="gallery-slide-item" onclick="openLightbox(this)" data-caption="Shaded al-fresco dining table nestled under the trees">
+                            <img src="NORM HOUSE AND POOL/Norms house Yard table.jpeg" alt="Shaded outdoor dining table and seating" loading="lazy" decoding="async">
+                            <span class="gallery-zoom-badge">🔍 Zoom</span>
+                        </div>
+                        <div class="gallery-slide-item" onclick="openLightbox(this)" data-caption="Panoramic view of the private grounds and pool sanctuary">
+                            <img src="NORM HOUSE AND POOL/Screenshot_20260812_234649_Airbnb.jpg" alt="Aerial perspective of pool and house grounds" loading="lazy" decoding="async">
+                            <span class="gallery-zoom-badge">🔍 Zoom</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-status-bar">
+                    <span>Gallery: <strong>House &amp; Grounds</strong></span>
+                    <span class="gallery-counter" id="counter-gallery-house">Swipe to explore (9 photos)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Suite Action & Direct Savings Card -->
+        <div class="suite-action-card">
+            <div class="suite-action-info">
+                <span class="suite-action-badge">Direct Host Benefit</span>
+                <h4>Save 10% on House &amp; Pool</h4>
+                <p>Book directly with host Norm to save <strong>10% off platform service fees</strong>, or reserve with verified Airbnb Superhost protection.</p>
+            </div>
+            <div class="suite-action-buttons">
+                <button class="btn-gold-primary" onclick="selectBookingSuite('house')">
+                    <span>Reserve &amp; Save 10% Direct &rarr;</span>
+                </button>
+                <a href="https://www.airbnb.com/rooms/1436142729628334485" target="_blank" rel="noopener noreferrer" class="btn-outline-secondary">
+                    <span>View on Airbnb ↗</span>
+                </a>
             </div>
         </div>
 
         <div class="host-banner">
-            <h3>Hosted by Norm</h3>
-            <p>Superhost &bull; 10 Years Hosting &bull; Top 5% of Homes on Airbnb</p>
+            <h3>Hosted by Norm Jones</h3>
+            <p>Superhost &bull; 10 Years Hosting Excellence &bull; Top 5% of Homes Worldwide</p>
         </div>
 
         <div class="section-block">
-            <h3 class="section-title">Premium Features</h3>
+            <h3 class="section-title">Property Highlights</h3>
             <div class="amenities-grid">
                 <div class="amenity-item">
-                    <h4>Resort Pool</h4>
-                    <p>Crystal-clear heated swimming pool</p>
+                    <h4>Heated Saltwater Pool</h4>
+                    <p>Crystal-clear, resort-quality swimming pool open seasonally for ultimate relaxation.</p>
                 </div>
                 <div class="amenity-item">
-                    <h4>Outdoor Dining</h4>
-                    <p>Multiple dining and lounging areas</p>
+                    <h4>Al-Fresco Dining</h4>
+                    <p>Multiple private terraces, dining areas, and sun decks surrounded by blooming flora.</p>
                 </div>
                 <div class="amenity-item">
-                    <h4>Landscaped Gardens</h4>
-                    <p>Professionally designed outdoor spaces</p>
+                    <h4>2-Acre Botanic Grounds</h4>
+                    <p>Meticulously curated perennial gardens, sweeping meadow views, and private walkways.</p>
                 </div>
                 <div class="amenity-item">
-                    <h4>Two Suites Rental</h4>
-                    <p>Complete privacy and luxury accommodation in the Queen or King Suite</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Interactive Booking Widget: House & Pool -->
-        <div class="booking-section">
-            <!-- Direct Booking Callout -->
-            <div class="direct-booking-banner">
-                <div class="direct-booking-content">
-                    <div class="direct-booking-badge">
-                        <svg class="star-icon" viewBox="0 0 24 24" style="width:14px;height:14px;fill:#C5A059;"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <span>Direct Booking Benefit</span>
-                    </div>
-                    <h4>Save 10% Direct</h4>
-                    <p>Save <strong>10%</strong> when you book directly with host Norm!</p>
-                </div>
-                <a href="#contact" class="direct-contact-btn">
-                    <span>Book Direct &amp; Save 10% &rarr;</span>
-                </a>
-            </div>
-
-            <div class="booking-widget-card" id="booking-widget-house">
-                <div class="widget-header">
-                    <h3>Check Availability or Book at Airbnb</h3>
-                </div>
-
-                <div class="suite-toggle-grid">
-                    <div class="suite-toggle-item active" data-suite="king" onclick="selectWidgetSuite('house', 'king')">
-                        <div class="suite-toggle-title">
-                            <span>The King Suite</span>
-                            <span class="suite-toggle-badge"><svg class="star-icon" style="width:14px;height:14px;fill:#F5B027;" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg> 5.0 (39)</span>
-                        </div>
-                        <div class="suite-toggle-desc">King Bed &bull; Fireplace &bull; Kitchenette &bull; 2 Guests</div>
-                    </div>
-
-                    <div class="suite-toggle-item" data-suite="queen" onclick="selectWidgetSuite('house', 'queen')">
-                        <div class="suite-toggle-title">
-                            <span>The Queen Suite</span>
-                            <span class="suite-toggle-badge"><svg class="star-icon" style="width:14px;height:14px;fill:#F5B027;" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg> 4.98 (28)</span>
-                        </div>
-                        <div class="suite-toggle-desc">Queen Bed &bull; Garden Views &bull; Fireplace &bull; 2 Guests</div>
-                    </div>
-                </div>
-
-                <div class="booking-inputs-row">
-                    <div class="booking-input-group">
-                        <label>Check-In <span class="nights-count-badge" id="nights-badge-house">Select Dates</span></label>
-                        <input type="date" class="booking-input" id="checkin-house" onchange="updateBookingWidget('house')">
-                    </div>
-
-                    <div class="booking-input-group">
-                        <label>Check-Out</label>
-                        <input type="date" class="booking-input" id="checkout-house" onchange="updateBookingWidget('house')">
-                    </div>
-
-                    <div class="booking-input-group">
-                        <label>Guests</label>
-                        <div class="guests-btn-trigger" id="guests-trigger-house" onclick="toggleGuestsPopup('house')">
-                            <span id="guests-label-house">2 Guests (2 Adults)</span>
-                            <svg class="dropdown-chevron" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
-                        </div>
-
-                        <div class="guests-popup" id="guests-popup-house">
-                            <div class="guests-popup-row">
-                                <div class="guests-label-box">
-                                    <h5>Adults</h5>
-                                    <span>Ages 13+</span>
-                                </div>
-                                <div class="guests-counter">
-                                    <button type="button" class="counter-btn" onclick="adjustGuests('house', 'adults', -1)">-</button>
-                                    <span class="counter-number" id="adults-count-house">2</span>
-                                    <button type="button" class="counter-btn" onclick="adjustGuests('house', 'adults', 1)">+</button>
-                                </div>
-                            </div>
-
-                            <div class="guests-popup-row">
-                                <div class="guests-label-box">
-                                    <h5>Children</h5>
-                                    <span>Ages 0–12</span>
-                                </div>
-                                <div class="guests-counter">
-                                    <button type="button" class="counter-btn" onclick="adjustGuests('house', 'children', -1)">-</button>
-                                    <span class="counter-number" id="children-count-house">0</span>
-                                    <button type="button" class="counter-btn" onclick="adjustGuests('house', 'children', 1)">+</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="booking-trust-bar">
-                    <div class="booking-trust-item">
-                        <svg class="airbnb-icon-brand" viewBox="0 0 32 32"><path d="M16 1c2.008 0 3.463.963 4.751 3.269l.533.993c2.732 5.12 6.716 13.064 6.716 17.738 0 5.514-4.225 9-12 9s-12-3.486-12-9c0-4.674 3.984-12.618 6.716-17.738l.533-.993C7.537 1.963 8.992 1 11 1h5zm0 2.2c-1.391 0-2.316.634-3.328 2.457l-.547 1.02C9.48 11.666 5.8 19.349 5.8 23c0 4.195 3.125 6.8 10.2 6.8s10.2-2.605 10.2-6.8c0-3.651-3.68-11.334-6.325-16.323l-.547-1.02C18.316 3.834 17.391 3.2 16 3.2zm0 10.8c3.088 0 5.6 2.512 5.6 5.6 0 3.21-2.695 5.6-5.6 5.6-2.905 0-5.6-2.39-5.6-5.6 0-3.088 2.512-5.6 5.6-5.6zm0 2.2c-1.874 0-3.4 1.526-3.4 3.4 0 1.988 1.624 3.4 3.4 3.4s3.4-1.412 3.4-3.4c0-1.874-1.526-3.4-3.4-3.4z"/></svg>
-                        <span>Airbnb Superhost &bull; Norm (10 Yrs)</span>
-                    </div>
-                    <div class="booking-trust-item">
-                        <span>Top 5% of Homes on Airbnb</span>
-                    </div>
-                    <div class="booking-trust-item">
-                        <span>Instant Confirmation</span>
-                    </div>
-                </div>
-
-                <a id="booking-cta-house" href="https://www.airbnb.com/rooms/1436142729628334485" target="_blank" rel="noopener noreferrer" class="booking-cta-button">
-                    <span>Check Availability or Book at Airbnb</span>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </a>
-
-                <div class="direct-listings-links">
-                    <span>Airbnb Guest Reviews:</span>
-                    <a href="https://www.airbnb.com/rooms/1436142729628334485#reviews" target="_blank" rel="noopener noreferrer" class="direct-listing-link">
-                        👑 The King Suite Reviews &rarr;
-                    </a>
-                    <a href="https://www.airbnb.com/rooms/1436434703423646137#reviews" target="_blank" rel="noopener noreferrer" class="direct-listing-link">
-                        🌿 The Queen Suite Reviews &rarr;
-                    </a>
+                    <h4>Dual Suite Privacy</h4>
+                    <p>Includes both the King and Queen suites with individual private entrances and bathrooms.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- KING SUITE -->
-    <div id="king" class="suite-content">
+    <!-- ========================================================
+         SUITE 2: THE KING SUITE
+    ======================================================== -->
+    <div id="king" class="suite-content" role="region" aria-labelledby="title-king">
         <div class="title-wrapper">
-            <h2 class="suite-title">The King Suite</h2>
+            <h2 class="suite-title" id="title-king">The King Suite</h2>
+            <div class="creator-tag">Designed &amp; Created by Norm Jones</div>
             <div class="location">Douglas, Michigan</div>
         </div>
 
         <div class="quick-stats">
             <span>2 Guests</span> 
-            <span>1 Bedroom</span> 
-            <span>1 Bath</span> 
-            <span><span class="gold-accent"><svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg> 5.0</span> Top-Rated on Airbnb (39 Reviews)</span>
+            <span>1 King Bed</span> 
+            <span>1 Luxury Bath</span> 
+            <span><svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg> 5.0 Star Rated (39 Reviews)</span>
         </div>
 
         <div class="section-block description">
-            <h3 class="section-title">A Sophisticated Escape</h3>
-            <p>Kick back and relax in this stylish, newly built property's King guest suite featuring a private entrance. Designed for ultimate comfort and relaxation, the large second-floor King Suite has been thoughtfully curated with a small kitchenette, a cozy fireplace, and a beautiful light-filled sitting area.</p>
-            <p>Strategically located on the edge of the city limits of Douglas, the suite overlooks a sweeping meadow. It is positioned perfectly for a very short walk to both Lake Michigan and downtown Douglas.</p>
-            <p>Step outside into a true paradise. The entire property features professional, high-end landscaping, enveloped by spectacular, god-like beautiful flowers and lush plants that create a serene, luxurious oasis for your stay.</p>
+            <h3 class="section-title">A Sophisticated 2nd-Floor Sanctuary</h3>
+            <p>Unwind in this expansive, newly constructed second-floor suite featuring a dedicated private entrance, plush king-size bed, and panoramic views of the meadow and gardens. Thoughtfully equipped with an ambient fireplace, kitchenette, and bright sitting area.</p>
+            <p>Positioned on the edge of Douglas, enjoy a peaceful atmosphere just moments from Lake Michigan beaches, award-winning restaurants, art galleries, and boutique shopping.</p>
         </div>
         
+        <!-- Photo Carousel -->
         <div class="section-block">
-            <h3 class="section-title">Tour the Suite</h3>
-            <p style="text-align: center; color: var(--text-muted); font-size: 0.9em; margin-bottom: 20px;">Swipe or drag to view gallery</p>
-            <div class="photo-gallery">
-                <img src="NORM KING SUIT/Screenshot_20260812_234620_Airbnb.jpg" alt="King Suite Image 1" loading="lazy" decoding="async">
-                <img src="NORM KING SUIT/Screenshot_20260812_234624_Airbnb.jpg" alt="King Suite Image 2" loading="lazy" decoding="async">
-                <img src="NORM KING SUIT/Screenshot_20260812_234627_Airbnb.jpg" alt="King Suite Image 3" loading="lazy" decoding="async">
-                <img src="NORM KING SUIT/Screenshot_20260812_234629_Airbnb.jpg" alt="King Suite Image 4" loading="lazy" decoding="async">
-                <img src="NORM KING SUIT/Screenshot_20260812_234632_Airbnb.jpg" alt="King Suite Image 5" loading="lazy" decoding="async">
-                <img src="NORM KING SUIT/Screenshot_20260812_234635_Airbnb.jpg" alt="King Suite Image 6" loading="lazy" decoding="async">
-                <img src="NORM KING SUIT/Screenshot_20260812_234638_Airbnb.jpg" alt="King Suite Image 7" loading="lazy" decoding="async">
-                <img src="NORM KING SUIT/Screenshot_20260812_234641_Airbnb.jpg" alt="King Suite Image 8" loading="lazy" decoding="async">
-                <img src="NORM KING SUIT/Screenshot_20260812_234643_Airbnb.jpg" alt="King Suite Image 9" loading="lazy" decoding="async">
-                <img src="NORM KING SUIT/Screenshot_20260812_234646_Airbnb.jpg" alt="King Suite Image 10" loading="lazy" decoding="async">
-                <img src="NORM KING SUIT/Screenshot_20260812_234702_Airbnb.jpg" alt="King Suite Image 11" loading="lazy" decoding="async">
-                <img src="NORM KING SUIT/Screenshot_20260812_234704_Airbnb.jpg" alt="King Suite Image 12" loading="lazy" decoding="async">
-                <img src="NORM KING SUIT/Screenshot_20260812_234707_Airbnb.jpg" alt="King Suite Image 13" loading="lazy" decoding="async">
+            <h3 class="section-title">Tour The King Suite</h3>
+            <p style="text-align: center; color: var(--text-muted); font-size: 0.92em; margin-bottom: 12px;">Swipe or use arrows to view gallery &bull; Click any photo to enlarge</p>
+            
+            <div class="gallery-container">
+                <button class="gallery-ctrl-btn prev" onclick="scrollGallery('gallery-king', -1)" aria-label="Previous image">‹</button>
+                <button class="gallery-ctrl-btn next" onclick="scrollGallery('gallery-king', 1)" aria-label="Next image">›</button>
+
+                <div class="gallery-wrapper">
+                    <div class="photo-gallery" id="gallery-king">
+                        <div class="gallery-slide-item" onclick="openLightbox(this)" data-caption="The King Suite master bedroom with plush king bedding and warm fireplace">
+                            <img src="NORM KING SUIT/Screenshot_20260812_234620_Airbnb.jpg" alt="King Suite bedroom featuring plush king bedding and cozy fireplace" loading="lazy" decoding="async">
+                            <span class="gallery-zoom-badge">🔍 Zoom</span>
+                        </div>
+                        <div class="gallery-slide-item" onclick="openLightbox(this)" data-caption="Light-filled sitting lounge with comfortable armchair and fireplace">
+                            <img src="NORM KING SUIT/Screenshot_20260812_234624_Airbnb.jpg" alt="King Suite sitting lounge with reading chair and modern fireplace" loading="lazy" decoding="async">
+                            <span class="gallery-zoom-badge">🔍 Zoom</span>
+                        </div>
+                        <div class="gallery-slide-item" onclick="openLightbox(this)" data-caption="Convenient en-suite kitchenette with coffee station, microwave, and refrigerator">
+                            <img src="NORM KING SUIT/Screenshot_20260812_234627_Airbnb.jpg" alt="Kitchenette with coffee maker and modern appliances" loading="lazy" decoding="async">
+                            <span class="gallery-zoom-badge">🔍 Zoom</span>
+                        </div>
+                        <div class="gallery-slide-item" onclick="openLightbox(this)" data-caption="Private modern en-suite bathroom with glass walk-in shower and luxury toiletries">
+                            <img src="NORM KING SUIT/Screenshot_20260812_234629_Airbnb.jpg" alt="Modern en-suite bathroom with glass shower" loading="lazy" decoding="async">
+                            <span class="gallery-zoom-badge">🔍 Zoom</span>
+                        </div>
+                        <div class="gallery-slide-item" onclick="openLightbox(this)" data-caption="Architectural details and expansive windows overlooking the gardens">
+                            <img src="NORM KING SUIT/Screenshot_20260812_234632_Airbnb.jpg" alt="Large picture windows overlooking private garden grounds" loading="lazy" decoding="async">
+                            <span class="gallery-zoom-badge">🔍 Zoom</span>
+                        </div>
+                        <div class="gallery-slide-item" onclick="openLightbox(this)" data-caption="Designer furnishings and custom artwork curated for a serene stay">
+                            <img src="NORM KING SUIT/Screenshot_20260812_234635_Airbnb.jpg" alt="Designer bedroom furnishings and ambient lighting" loading="lazy" decoding="async">
+                            <span class="gallery-zoom-badge">🔍 Zoom</span>
+                        </div>
+                        <div class="gallery-slide-item" onclick="openLightbox(this)" data-caption="Private exterior entrance staircase with keyless smart lock entry">
+                            <img src="NORM KING SUIT/Screenshot_20260812_234638_Airbnb.jpg" alt="Private exterior entrance and staircase" loading="lazy" decoding="async">
+                            <span class="gallery-zoom-badge">🔍 Zoom</span>
+                        </div>
+                        <div class="gallery-slide-item" onclick="openLightbox(this)" data-caption="High-definition Smart TV and streaming setup for evening entertainment">
+                            <img src="NORM KING SUIT/Screenshot_20260812_234641_Airbnb.jpg" alt="Smart TV and high speed wifi entertainment setup" loading="lazy" decoding="async">
+                            <span class="gallery-zoom-badge">🔍 Zoom</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-status-bar">
+                    <span>Gallery: <strong>The King Suite</strong></span>
+                    <span class="gallery-counter" id="counter-gallery-king">Swipe to explore (8 photos)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Suite Action & Direct Savings Card -->
+        <div class="suite-action-card">
+            <div class="suite-action-info">
+                <span class="suite-action-badge">Direct Host Benefit</span>
+                <h4>Save 10% on The King Suite</h4>
+                <p>Book directly with host Norm to save <strong>10% off platform service fees</strong>, or reserve with 39 verified 5-star reviews on Airbnb.</p>
+            </div>
+            <div class="suite-action-buttons">
+                <button class="btn-gold-primary" onclick="selectBookingSuite('king')">
+                    <span>Reserve &amp; Save 10% Direct &rarr;</span>
+                </button>
+                <a href="https://www.airbnb.com/rooms/1436142729628334485#reviews" target="_blank" rel="noopener noreferrer" class="btn-outline-secondary">
+                    <span>Read 39 Reviews on Airbnb ↗</span>
+                </a>
             </div>
         </div>
 
         <div class="host-banner">
-            <h3>Hosted by Norm</h3>
-            <p>Superhost &bull; 10 Years Hosting &bull; Top 5% of Homes on Airbnb</p>
+            <h3>Hosted by Norm Jones</h3>
+            <p>Superhost &bull; 10 Years Hosting Excellence &bull; Top 5% of Homes Worldwide</p>
         </div>
 
         <div class="section-block">
-            <h3 class="section-title">Curated Amenities</h3>
+            <h3 class="section-title">King Suite Amenities</h3>
             <div class="amenities-grid">
                 <div class="amenity-item">
-                    <h4>Premium Bedding</h4>
-                    <p>Luxurious high-thread count linens and plush pillows</p>
+                    <h4>King-Size Bed</h4>
+                    <p>Ultra-comfortable memory foam mattress with luxury high-thread-count linens.</p>
                 </div>
                 <div class="amenity-item">
-                    <h4>Fireplace</h4>
-                    <p>Cozy ambiance for relaxing evenings</p>
+                    <h4>Cozy Fireplace</h4>
+                    <p>Electric fireplace providing warmth and gentle evening ambiance.</p>
                 </div>
                 <div class="amenity-item">
-                    <h4>Kitchenette</h4>
-                    <p>Fully equipped with modern appliances</p>
+                    <h4>Private Kitchenette</h4>
+                    <p>Equipped with mini-fridge, microwave, Keurig coffee maker, and diningware.</p>
                 </div>
                 <div class="amenity-item">
-                    <h4>Smart TV & WiFi</h4>
-                    <p>Entertainment and connectivity at your fingertips</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Interactive Booking Widget: King Suite -->
-        <div class="booking-section">
-            <!-- Direct Booking Callout -->
-            <div class="direct-booking-banner">
-                <div class="direct-booking-content">
-                    <div class="direct-booking-badge">
-                        <svg class="star-icon" viewBox="0 0 24 24" style="width:14px;height:14px;fill:#C5A059;"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <span>Direct Booking Benefit</span>
-                    </div>
-                    <h4>Save 10% Direct</h4>
-                    <p>Save <strong>10%</strong> when you book directly with host Norm!</p>
-                </div>
-                <a href="#contact" class="direct-contact-btn">
-                    <span>Book Direct &amp; Save 10% &rarr;</span>
-                </a>
-            </div>
-
-            <div class="booking-widget-card" id="booking-widget-king">
-                <div class="widget-header">
-                    <h3>Check Availability or Book at Airbnb</h3>
-                </div>
-
-                <div class="suite-toggle-grid">
-                    <div class="suite-toggle-item active" data-suite="king" onclick="selectWidgetSuite('king', 'king')">
-                        <div class="suite-toggle-title">
-                            <span>The King Suite</span>
-                            <span class="suite-toggle-badge"><svg class="star-icon" style="width:14px;height:14px;fill:#F5B027;" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg> 5.0 (39)</span>
-                        </div>
-                        <div class="suite-toggle-desc">King Bed &bull; Fireplace &bull; Kitchenette &bull; 2 Guests</div>
-                    </div>
-
-                    <div class="suite-toggle-item" data-suite="queen" onclick="selectWidgetSuite('king', 'queen')">
-                        <div class="suite-toggle-title">
-                            <span>The Queen Suite</span>
-                            <span class="suite-toggle-badge"><svg class="star-icon" style="width:14px;height:14px;fill:#F5B027;" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg> 4.98 (28)</span>
-                        </div>
-                        <div class="suite-toggle-desc">Queen Bed &bull; Garden Views &bull; Fireplace &bull; 2 Guests</div>
-                    </div>
-                </div>
-
-                <div class="booking-inputs-row">
-                    <div class="booking-input-group">
-                        <label>Check-In <span class="nights-count-badge" id="nights-badge-king">Select Dates</span></label>
-                        <input type="date" class="booking-input" id="checkin-king" onchange="updateBookingWidget('king')">
-                    </div>
-
-                    <div class="booking-input-group">
-                        <label>Check-Out</label>
-                        <input type="date" class="booking-input" id="checkout-king" onchange="updateBookingWidget('king')">
-                    </div>
-
-                    <div class="booking-input-group">
-                        <label>Guests</label>
-                        <div class="guests-btn-trigger" id="guests-trigger-king" onclick="toggleGuestsPopup('king')">
-                            <span id="guests-label-king">2 Guests (2 Adults)</span>
-                            <svg class="dropdown-chevron" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
-                        </div>
-
-                        <div class="guests-popup" id="guests-popup-king">
-                            <div class="guests-popup-row">
-                                <div class="guests-label-box">
-                                    <h5>Adults</h5>
-                                    <span>Ages 13+</span>
-                                </div>
-                                <div class="guests-counter">
-                                    <button type="button" class="counter-btn" onclick="adjustGuests('king', 'adults', -1)">-</button>
-                                    <span class="counter-number" id="adults-count-king">2</span>
-                                    <button type="button" class="counter-btn" onclick="adjustGuests('king', 'adults', 1)">+</button>
-                                </div>
-                            </div>
-
-                            <div class="guests-popup-row">
-                                <div class="guests-label-box">
-                                    <h5>Children</h5>
-                                    <span>Ages 0–12</span>
-                                </div>
-                                <div class="guests-counter">
-                                    <button type="button" class="counter-btn" onclick="adjustGuests('king', 'children', -1)">-</button>
-                                    <span class="counter-number" id="children-count-king">0</span>
-                                    <button type="button" class="counter-btn" onclick="adjustGuests('king', 'children', 1)">+</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="booking-trust-bar">
-                    <div class="booking-trust-item">
-                        <svg class="airbnb-icon-brand" viewBox="0 0 32 32"><path d="M16 1c2.008 0 3.463.963 4.751 3.269l.533.993c2.732 5.12 6.716 13.064 6.716 17.738 0 5.514-4.225 9-12 9s-12-3.486-12-9c0-4.674 3.984-12.618 6.716-17.738l.533-.993C7.537 1.963 8.992 1 11 1h5zm0 2.2c-1.391 0-2.316.634-3.328 2.457l-.547 1.02C9.48 11.666 5.8 19.349 5.8 23c0 4.195 3.125 6.8 10.2 6.8s10.2-2.605 10.2-6.8c0-3.651-3.68-11.334-6.325-16.323l-.547-1.02C18.316 3.834 17.391 3.2 16 3.2zm0 10.8c3.088 0 5.6 2.512 5.6 5.6 0 3.21-2.695 5.6-5.6 5.6-2.905 0-5.6-2.39-5.6-5.6 0-3.088 2.512-5.6 5.6-5.6zm0 2.2c-1.874 0-3.4 1.526-3.4 3.4 0 1.988 1.624 3.4 3.4 3.4s3.4-1.412 3.4-3.4c0-1.874-1.526-3.4-3.4-3.4z"/></svg>
-                        <span>Airbnb Superhost &bull; Norm (10 Yrs)</span>
-                    </div>
-                    <div class="booking-trust-item">
-                        <span>Top 5% of Homes on Airbnb</span>
-                    </div>
-                    <div class="booking-trust-item">
-                        <span>Instant Confirmation</span>
-                    </div>
-                </div>
-
-                <a id="booking-cta-king" href="https://www.airbnb.com/rooms/1436142729628334485" target="_blank" rel="noopener noreferrer" class="booking-cta-button">
-                    <span>Check Availability or Book at Airbnb</span>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </a>
-
-                <div class="direct-listings-links">
-                    <span>Airbnb Guest Reviews:</span>
-                    <a href="https://www.airbnb.com/rooms/1436142729628334485#reviews" target="_blank" rel="noopener noreferrer" class="direct-listing-link">
-                        👑 The King Suite Reviews &rarr;
-                    </a>
-                    <a href="https://www.airbnb.com/rooms/1436434703423646137#reviews" target="_blank" rel="noopener noreferrer" class="direct-listing-link">
-                        🌿 The Queen Suite Reviews &rarr;
-                    </a>
+                    <h4>Pool &amp; Patio Access</h4>
+                    <p>Full access to the resort saltwater pool, sun terraces, and botanic grounds.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- QUEEN SUITE -->
-    <div id="queen" class="suite-content">
+    <!-- ========================================================
+         SUITE 3: THE QUEEN SUITE
+    ======================================================== -->
+    <div id="queen" class="suite-content" role="region" aria-labelledby="title-queen">
         <div class="title-wrapper">
-            <h2 class="suite-title">The Queen Suite</h2>
+            <h2 class="suite-title" id="title-queen">The Queen Suite</h2>
+            <div class="creator-tag">Designed &amp; Created by Norm Jones</div>
             <div class="location">Douglas, Michigan</div>
         </div>
 
         <div class="quick-stats">
             <span>2 Guests</span> 
-            <span>1 Bedroom</span> 
-            <span>1 Bath</span> 
-            <span><span class="gold-accent"><svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg> 4.9</span> Top-Rated on Airbnb (28 Reviews)</span>
+            <span>1 Queen Bed</span> 
+            <span>1 Designer Bath</span> 
+            <span><svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg> 4.98 Star Rated (28 Reviews)</span>
         </div>
 
         <div class="section-block description">
-            <h3 class="section-title">Elegant Comfort & Charm</h3>
-            <p>Experience refined elegance in this beautifully appointed Queen Suite, featuring a spacious bedroom with a luxurious queen bed. Offering a serene escape with modern amenities, the suite includes a sophisticated sitting area and premium finishes throughout.</p>
-            <p>Located on the outskirts of Douglas with easy access to Lake Michigan's pristine beaches and the vibrant downtown area, this suite provides the perfect balance between tranquility and accessibility for exploring the region.</p>
-            <p>Wake up to stunning views of the landscaped gardens while enjoying the peaceful ambiance of this exclusive retreat, complete with all the touches that make your stay truly memorable.</p>
+            <h3 class="section-title">Elegant Charm &amp; Garden Vistas</h3>
+            <p>Experience tailored comfort in the Queen Suite, featuring a queen-size bed, private modern en-suite bathroom, cozy fireplace, and dedicated smart entertainment lounge. Windows frame peaceful garden vistas and blooming grounds.</p>
+            <p>A tranquil haven crafted for couples and solo retreaters seeking restorative comfort with direct access to the saltwater swimming pool and scenic grounds.</p>
         </div>
         
+        <!-- Photo Carousel -->
         <div class="section-block">
-            <h3 class="section-title">Tour the Suite</h3>
-            <p style="text-align: center; color: var(--text-muted); font-size: 0.9em; margin-bottom: 20px;">Swipe or drag to view gallery</p>
-            <div class="photo-gallery">
-                <img src="NORM QUEEN SUIT/pic tv.jpeg" alt="Queen Suite Fireplace and TV" loading="lazy" decoding="async">
-                <img src="NORM KING SUIT/Screenshot_20260812_234635_Airbnb.jpg" alt="Queen Suite Bedroom & Fireplace" loading="lazy" decoding="async">
-                <img src="NORM QUEEN SUIT/Screenshot_20260812_231400_Samsung Browser.jpg" alt="Queen Suite Image 1" loading="lazy" decoding="async">
-                <img src="NORM QUEEN SUIT/pic tv3.jpeg" alt="Queen Suite Image 4" loading="lazy" decoding="async">
-                <img src="NORM QUEEN SUIT/Screenshot_20260812_231404_Samsung Browser.jpg" alt="Queen Suite Image 2" loading="lazy" decoding="async">
-                <img src="NORM QUEEN SUIT/Screenshot_20260812_231407_Samsung Browser.jpg" alt="Queen Suite Image 3" loading="lazy" decoding="async">
-                <img src="NORM QUEEN SUIT/Screenshot_20260812_231410_Samsung Browser.jpg" alt="Queen Suite Image 4" loading="lazy" decoding="async">
-                <img src="NORM QUEEN SUIT/Screenshot_20260812_231413_Samsung Browser.jpg" alt="Queen Suite Image 5" loading="lazy" decoding="async">
-                <img src="NORM QUEEN SUIT/Screenshot_20260812_231416_Samsung Browser.jpg" alt="Queen Suite Image 6" loading="lazy" decoding="async">
-                <img src="NORM QUEEN SUIT/Screenshot_20260812_231420_Samsung Browser.jpg" alt="Queen Suite Image 7" loading="lazy" decoding="async">
-                <img src="NORM QUEEN SUIT/Screenshot_20260812_231425_Samsung Browser.jpg" alt="Queen Suite Image 8" loading="lazy" decoding="async">
-                <img src="NORM QUEEN SUIT/Screenshot_20260812_231428_Samsung Browser.jpg" alt="Queen Suite Image 9" loading="lazy" decoding="async">
-                <img src="NORM QUEEN SUIT/Screenshot_20260812_231431_Samsung Browser.jpg" alt="Queen Suite Image 10" loading="lazy" decoding="async">
-                <img src="NORM QUEEN SUIT/Screenshot_20260812_231441_Samsung Browser.jpg" alt="Queen Suite Image 11" loading="lazy" decoding="async">
-                <img src="NORM QUEEN SUIT/Screenshot_20260812_231444_Samsung Browser.jpg" alt="Queen Suite Image 12" loading="lazy" decoding="async">
-                <img src="NORM QUEEN SUIT/Screenshot_20260812_231447_Samsung Browser.jpg" alt="Queen Suite Image 13" loading="lazy" decoding="async">
-                <img src="NORM QUEEN SUIT/Screenshot_20260812_231451_Samsung Browser.jpg" alt="Queen Suite Image 14" loading="lazy" decoding="async">
+            <h3 class="section-title">Tour The Queen Suite</h3>
+            <p style="text-align: center; color: var(--text-muted); font-size: 0.92em; margin-bottom: 12px;">Swipe or use arrows to view gallery &bull; Click any photo to enlarge</p>
+            
+            <div class="gallery-container">
+                <button class="gallery-ctrl-btn prev" onclick="scrollGallery('gallery-queen', -1)" aria-label="Previous image">‹</button>
+                <button class="gallery-ctrl-btn next" onclick="scrollGallery('gallery-queen', 1)" aria-label="Next image">›</button>
+
+                <div class="gallery-wrapper">
+                    <div class="photo-gallery" id="gallery-queen">
+                        <div class="gallery-slide-item" onclick="openLightbox(this)" data-caption="Queen Suite bedroom with fireplace, wall-mounted Smart TV, and luxury bedding">
+                            <img src="NORM QUEEN SUIT/pic tv.jpeg" alt="Queen Suite fireplace and smart TV bedroom area" loading="lazy" decoding="async">
+                            <span class="gallery-zoom-badge">🔍 Zoom</span>
+                        </div>
+                        <div class="gallery-slide-item" onclick="openLightbox(this)" data-caption="Plush queen bed with designer headboard and garden views">
+                            <img src="NORM QUEEN SUIT/Screenshot_20260812_231400_Samsung Browser.jpg" alt="Queen bed with crisp white linens and accent pillows" loading="lazy" decoding="async">
+                            <span class="gallery-zoom-badge">🔍 Zoom</span>
+                        </div>
+                        <div class="gallery-slide-item" onclick="openLightbox(this)" data-caption="Warm electric fireplace adding cozy ambiance for evening relaxation">
+                            <img src="NORM QUEEN SUIT/pic tv3.jpeg" alt="Electric fireplace close-up in the Queen Suite" loading="lazy" decoding="async">
+                            <span class="gallery-zoom-badge">🔍 Zoom</span>
+                        </div>
+                        <div class="gallery-slide-item" onclick="openLightbox(this)" data-caption="Designer en-suite bathroom with walk-in glass shower and fresh towels">
+                            <img src="NORM QUEEN SUIT/Screenshot_20260812_231404_Samsung Browser.jpg" alt="Designer bathroom with walk-in shower" loading="lazy" decoding="async">
+                            <span class="gallery-zoom-badge">🔍 Zoom</span>
+                        </div>
+                        <div class="gallery-slide-item" onclick="openLightbox(this)" data-caption="Sitting lounge and coffee station for morning relaxation">
+                            <img src="NORM QUEEN SUIT/Screenshot_20260812_231407_Samsung Browser.jpg" alt="Sitting lounge and coffee corner" loading="lazy" decoding="async">
+                            <span class="gallery-zoom-badge">🔍 Zoom</span>
+                        </div>
+                        <div class="gallery-slide-item" onclick="openLightbox(this)" data-caption="Private ground-floor entrance with direct access to garden paths">
+                            <img src="NORM QUEEN SUIT/Screenshot_20260812_231410_Samsung Browser.jpg" alt="Private entrance and garden view" loading="lazy" decoding="async">
+                            <span class="gallery-zoom-badge">🔍 Zoom</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-status-bar">
+                    <span>Gallery: <strong>The Queen Suite</strong></span>
+                    <span class="gallery-counter" id="counter-gallery-queen">Swipe to explore (6 photos)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Suite Action & Direct Savings Card -->
+        <div class="suite-action-card">
+            <div class="suite-action-info">
+                <span class="suite-action-badge">Direct Host Benefit</span>
+                <h4>Save 10% on The Queen Suite</h4>
+                <p>Book directly with host Norm to save <strong>10% off platform service fees</strong>, or reserve with 28 verified 4.98-star reviews on Airbnb.</p>
+            </div>
+            <div class="suite-action-buttons">
+                <button class="btn-gold-primary" onclick="selectBookingSuite('queen')">
+                    <span>Reserve &amp; Save 10% Direct &rarr;</span>
+                </button>
+                <a href="https://www.airbnb.com/rooms/1436434703423646137#reviews" target="_blank" rel="noopener noreferrer" class="btn-outline-secondary">
+                    <span>Read 28 Reviews on Airbnb ↗</span>
+                </a>
             </div>
         </div>
 
         <div class="host-banner">
-            <h3>Hosted by Norm</h3>
-            <p>Superhost &bull; 10 Years Hosting &bull; Top 5% of Homes on Airbnb</p>
+            <h3>Hosted by Norm Jones</h3>
+            <p>Superhost &bull; 10 Years Hosting Excellence &bull; Top 5% of Homes Worldwide</p>
         </div>
 
         <div class="section-block">
-            <h3 class="section-title">Curated Amenities</h3>
+            <h3 class="section-title">Queen Suite Amenities</h3>
             <div class="amenities-grid">
                 <div class="amenity-item">
-                    <h4>Luxury Bedding</h4>
-                    <p>Premium quilted comfort for perfect sleep</p>
+                    <h4>Queen Pillow-Top Bed</h4>
+                    <p>Premium quilted mattress dressed with ultra-soft breathable linens.</p>
                 </div>
                 <div class="amenity-item">
-                    <h4>Sitting Area</h4>
-                    <p>Perfect spot for reading and relaxation</p>
+                    <h4>Smart TV &amp; Fireplace</h4>
+                    <p>Stream your favorite shows by the comforting glow of the in-room fireplace.</p>
                 </div>
                 <div class="amenity-item">
                     <h4>Modern En-Suite</h4>
-                    <p>Sleek bathroom with premium toiletries</p>
+                    <p>Sleek bathroom featuring walk-in shower, plush towels, and luxury soap.</p>
                 </div>
                 <div class="amenity-item">
-                    <h4>Garden Views</h4>
-                    <p>Serene vistas of the landscaped grounds</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Interactive Booking Widget: Queen Suite -->
-        <div class="booking-section">
-            <!-- Direct Booking Callout -->
-            <div class="direct-booking-banner">
-                <div class="direct-booking-content">
-                    <div class="direct-booking-badge">
-                        <svg class="star-icon" viewBox="0 0 24 24" style="width:14px;height:14px;fill:#C5A059;"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <span>Direct Booking Benefit</span>
-                    </div>
-                    <h4>Save 10% Direct</h4>
-                    <p>Save <strong>10%</strong> when you book directly with host Norm!</p>
-                </div>
-                <a href="#contact" class="direct-contact-btn">
-                    <span>Book Direct &amp; Save 10% &rarr;</span>
-                </a>
-            </div>
-
-            <div class="booking-widget-card" id="booking-widget-queen">
-                <div class="widget-header">
-                    <h3>Check Availability or Book at Airbnb</h3>
-                </div>
-
-                <div class="suite-toggle-grid">
-                    <div class="suite-toggle-item" data-suite="king" onclick="selectWidgetSuite('queen', 'king')">
-                        <div class="suite-toggle-title">
-                            <span>The King Suite</span>
-                            <span class="suite-toggle-badge"><svg class="star-icon" style="width:14px;height:14px;fill:#F5B027;" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg> 5.0 (39)</span>
-                        </div>
-                        <div class="suite-toggle-desc">King Bed &bull; Fireplace &bull; Kitchenette &bull; 2 Guests</div>
-                    </div>
-
-                    <div class="suite-toggle-item active" data-suite="queen" onclick="selectWidgetSuite('queen', 'queen')">
-                        <div class="suite-toggle-title">
-                            <span>The Queen Suite</span>
-                            <span class="suite-toggle-badge"><svg class="star-icon" style="width:14px;height:14px;fill:#F5B027;" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg> 4.98 (28)</span>
-                        </div>
-                        <div class="suite-toggle-desc">Queen Bed &bull; Garden Views &bull; Fireplace &bull; 2 Guests</div>
-                    </div>
-                </div>
-
-                <div class="booking-inputs-row">
-                    <div class="booking-input-group">
-                        <label>Check-In <span class="nights-count-badge" id="nights-badge-queen">Select Dates</span></label>
-                        <input type="date" class="booking-input" id="checkin-queen" onchange="updateBookingWidget('queen')">
-                    </div>
-
-                    <div class="booking-input-group">
-                        <label>Check-Out</label>
-                        <input type="date" class="booking-input" id="checkout-queen" onchange="updateBookingWidget('queen')">
-                    </div>
-
-                    <div class="booking-input-group">
-                        <label>Guests</label>
-                        <div class="guests-btn-trigger" id="guests-trigger-queen" onclick="toggleGuestsPopup('queen')">
-                            <span id="guests-label-queen">2 Guests (2 Adults)</span>
-                            <svg class="dropdown-chevron" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
-                        </div>
-
-                        <div class="guests-popup" id="guests-popup-queen">
-                            <div class="guests-popup-row">
-                                <div class="guests-label-box">
-                                    <h5>Adults</h5>
-                                    <span>Ages 13+</span>
-                                </div>
-                                <div class="guests-counter">
-                                    <button type="button" class="counter-btn" onclick="adjustGuests('queen', 'adults', -1)">-</button>
-                                    <span class="counter-number" id="adults-count-queen">2</span>
-                                    <button type="button" class="counter-btn" onclick="adjustGuests('queen', 'adults', 1)">+</button>
-                                </div>
-                            </div>
-
-                            <div class="guests-popup-row">
-                                <div class="guests-label-box">
-                                    <h5>Children</h5>
-                                    <span>Ages 0–12</span>
-                                </div>
-                                <div class="guests-counter">
-                                    <button type="button" class="counter-btn" onclick="adjustGuests('queen', 'children', -1)">-</button>
-                                    <span class="counter-number" id="children-count-queen">0</span>
-                                    <button type="button" class="counter-btn" onclick="adjustGuests('queen', 'children', 1)">+</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="booking-trust-bar">
-                    <div class="booking-trust-item">
-                        <svg class="airbnb-icon-brand" viewBox="0 0 32 32"><path d="M16 1c2.008 0 3.463.963 4.751 3.269l.533.993c2.732 5.12 6.716 13.064 6.716 17.738 0 5.514-4.225 9-12 9s-12-3.486-12-9c0-4.674 3.984-12.618 6.716-17.738l.533-.993C7.537 1.963 8.992 1 11 1h5zm0 2.2c-1.391 0-2.316.634-3.328 2.457l-.547 1.02C9.48 11.666 5.8 19.349 5.8 23c0 4.195 3.125 6.8 10.2 6.8s10.2-2.605 10.2-6.8c0-3.651-3.68-11.334-6.325-16.323l-.547-1.02C18.316 3.834 17.391 3.2 16 3.2zm0 10.8c3.088 0 5.6 2.512 5.6 5.6 0 3.21-2.695 5.6-5.6 5.6-2.905 0-5.6-2.39-5.6-5.6 0-3.088 2.512-5.6 5.6-5.6zm0 2.2c-1.874 0-3.4 1.526-3.4 3.4 0 1.988 1.624 3.4 3.4 3.4s3.4-1.412 3.4-3.4c0-1.874-1.526-3.4-3.4-3.4z"/></svg>
-                        <span>Airbnb Superhost &bull; Norm (10 Yrs)</span>
-                    </div>
-                    <div class="booking-trust-item">
-                        <span>Top 5% of Homes on Airbnb</span>
-                    </div>
-                    <div class="booking-trust-item">
-                        <span>Instant Confirmation</span>
-                    </div>
-                </div>
-
-                <a id="booking-cta-queen" href="https://www.airbnb.com/rooms/1436434703423646137" target="_blank" rel="noopener noreferrer" class="booking-cta-button">
-                    <span>Check Availability or Book at Airbnb</span>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </a>
-
-                <div class="direct-listings-links">
-                    <span>Airbnb Guest Reviews:</span>
-                    <a href="https://www.airbnb.com/rooms/1436142729628334485#reviews" target="_blank" rel="noopener noreferrer" class="direct-listing-link">
-                        👑 The King Suite Reviews &rarr;
-                    </a>
-                    <a href="https://www.airbnb.com/rooms/1436434703423646137#reviews" target="_blank" rel="noopener noreferrer" class="direct-listing-link">
-                        🌿 The Queen Suite Reviews &rarr;
-                    </a>
+                    <h4>Pool &amp; Grounds Access</h4>
+                    <p>Full access to the heated saltwater pool, outdoor terraces, and botanical paths.</p>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- ========================================================
+         6. SIDE-BY-SIDE SUITE COMPARISON MATRIX
+    ======================================================== -->
+    <section class="comparison-section" id="comparison" aria-labelledby="comparison-heading">
+        <div class="comparison-header">
+            <h2 id="comparison-heading">Suite &amp; Property Comparison</h2>
+            <p>Compare accommodations side-by-side to choose the perfect retreat for your Michigan vacation.</p>
+        </div>
+
+        <div class="comparison-table-wrapper">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th class="highlight-col">House &amp; Pool (Dual Suites)</th>
+                        <th>The King Suite</th>
+                        <th>The Queen Suite</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="feature-title">Max Occupancy</td>
+                        <td class="highlight-col"><strong>Up to 4 Guests</strong></td>
+                        <td>Up to 2 Guests</td>
+                        <td>Up to 2 Guests</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-title">Bedding Setup</td>
+                        <td class="highlight-col">1 King Bed + 1 Queen Bed</td>
+                        <td>1 King-Size Bed</td>
+                        <td>1 Queen-Size Bed</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-title">Bathrooms</td>
+                        <td class="highlight-col">2 Full Private Bathrooms</td>
+                        <td>1 Luxury En-Suite Bath</td>
+                        <td>1 Modern En-Suite Bath</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-title">Pool &amp; Grounds</td>
+                        <td class="highlight-col"><span class="comparison-badge-pill">Full Private Access</span></td>
+                        <td>Shared Resort Pool Access</td>
+                        <td>Shared Resort Pool Access</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-title">Kitchenette &amp; Dining</td>
+                        <td class="highlight-col">Dual Kitchenettes + Al-Fresco Dining</td>
+                        <td>En-Suite Kitchenette</td>
+                        <td>Coffee Bar &amp; Mini-Fridge</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-title">In-Room Fireplace</td>
+                        <td class="highlight-col">Dual Fireplaces (Both Suites)</td>
+                        <td>Yes (Electric Fireplace)</td>
+                        <td>Yes (Electric Fireplace)</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-title">Airbnb Rating</td>
+                        <td class="highlight-col">Top 5% Superhost</td>
+                        <td>5.0 ★ (39 Reviews)</td>
+                        <td>4.98 ★ (28 Reviews)</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-title">Direct Booking Rate</td>
+                        <td class="highlight-col"><strong>Save 10% Direct</strong></td>
+                        <td><strong>Save 10% Direct</strong></td>
+                        <td><strong>Save 10% Direct</strong></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-title">Reserve</td>
+                        <td class="highlight-col">
+                            <button class="table-action-btn gold" onclick="selectBookingSuite('house')">Select House &rarr;</button>
+                        </td>
+                        <td>
+                            <button class="table-action-btn gold" onclick="selectBookingSuite('king')">Select King &rarr;</button>
+                        </td>
+                        <td>
+                            <button class="table-action-btn gold" onclick="selectBookingSuite('queen')">Select Queen &rarr;</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- ========================================================
+         7. CONSOLIDATED RESERVATION & DIRECT BOOKING HUB
+    ======================================================== -->
+    <section class="booking-hub-section" id="booking" aria-labelledby="booking-hub-title">
+        <div class="booking-hub-header">
+            <h2 id="booking-hub-title">Reservation &amp; Availability Hub</h2>
+            <p>Select your dates and book with verified Superhost protection or save 10% direct</p>
+        </div>
+
+        <!-- Suite Selector Grid -->
+        <div class="suite-toggle-grid">
+            <div class="suite-toggle-item active" data-suite="house" onclick="setHubSuite('house')">
+                <div class="suite-toggle-title">
+                    <span>House &amp; Pool</span>
+                    <span class="suite-toggle-badge">Dual Suites</span>
+                </div>
+                <div class="suite-toggle-desc">King + Queen Bed &bull; Pool &bull; Up to 4 Guests</div>
+            </div>
+
+            <div class="suite-toggle-item" data-suite="king" onclick="setHubSuite('king')">
+                <div class="suite-toggle-title">
+                    <span>The King Suite</span>
+                    <span class="suite-toggle-badge"><svg class="star-icon" style="width:13px;height:13px;" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg> 5.0 (39)</span>
+                </div>
+                <div class="suite-toggle-desc">King Bed &bull; Fireplace &bull; 2 Guests</div>
+            </div>
+
+            <div class="suite-toggle-item" data-suite="queen" onclick="setHubSuite('queen')">
+                <div class="suite-toggle-title">
+                    <span>The Queen Suite</span>
+                    <span class="suite-toggle-badge"><svg class="star-icon" style="width:13px;height:13px;" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg> 4.98 (28)</span>
+                </div>
+                <div class="suite-toggle-desc">Queen Bed &bull; Garden View &bull; 2 Guests</div>
+            </div>
+        </div>
+
+        <!-- Date & Guest Inputs -->
+        <div class="booking-inputs-row">
+            <div class="booking-input-group">
+                <label for="checkin-date">Check-In <span class="nights-count-badge" id="nights-badge">3 Nights</span></label>
+                <input type="date" class="booking-input" id="checkin-date" onchange="handleDateChange()">
+            </div>
+
+            <div class="booking-input-group">
+                <label for="checkout-date">Check-Out</label>
+                <input type="date" class="booking-input" id="checkout-date" onchange="handleDateChange()">
+            </div>
+
+            <div class="booking-input-group">
+                <label>Guests</label>
+                <div class="guests-btn-trigger" id="guests-trigger" onclick="toggleGuestsDropdown()">
+                    <span id="guests-display-label">2 Guests (2 Adults)</span>
+                    <svg class="dropdown-chevron" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+                </div>
+
+                <div class="guests-popup" id="guests-popup">
+                    <div class="guests-popup-row">
+                        <div class="guests-label-box">
+                            <h5>Adults</h5>
+                            <span>Ages 13+</span>
+                        </div>
+                        <div class="guests-counter">
+                            <button type="button" class="counter-btn" onclick="updateGuests('adults', -1)" aria-label="Decrease adults">-</button>
+                            <span class="counter-number" id="count-adults">2</span>
+                            <button type="button" class="counter-btn" onclick="updateGuests('adults', 1)" aria-label="Increase adults">+</button>
+                        </div>
+                    </div>
+
+                    <div class="guests-popup-row">
+                        <div class="guests-label-box">
+                            <h5>Children</h5>
+                            <span>Ages 0–12</span>
+                        </div>
+                        <div class="guests-counter">
+                            <button type="button" class="counter-btn" onclick="updateGuests('children', -1)" aria-label="Decrease children">-</button>
+                            <span class="counter-number" id="count-children">0</span>
+                            <button type="button" class="counter-btn" onclick="updateGuests('children', 1)" aria-label="Increase children">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- High-Hierarchy Dual CTA Buttons -->
+        <div class="booking-cta-dual-row">
+            <!-- Primary Action: Direct Booking (10% Savings) -->
+            <button class="booking-cta-main-gold" onclick="openDirectInquiryModal()" id="btn-direct-save">
+                <span>Book Direct &amp; Save 10% with Host Norm &rarr;</span>
+                <span class="subtext">Waive third-party fees &bull; Guaranteed best direct rate</span>
+            </button>
+
+            <!-- Secondary Action: Airbnb Superhost Verified Deep-link -->
+            <a href="https://www.airbnb.com/rooms/1436142729628334485" target="_blank" rel="noopener noreferrer" class="booking-cta-airbnb-btn" id="btn-airbnb-deep">
+                <span>Reserve on Airbnb &bull; Superhost</span>
+                <span class="subtext">Instant booking with selected dates synced</span>
+            </a>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="booking-trust-bar">
+            <div class="booking-trust-item">
+                <svg class="airbnb-icon-brand" viewBox="0 0 32 32"><path d="M16 1c2.008 0 3.463.963 4.751 3.269l.533.993c2.732 5.12 6.716 13.064 6.716 17.738 0 5.514-4.225 9-12 9s-12-3.486-12-9c0-4.674 3.984-12.618 6.716-17.738l.533-.993C7.537 1.963 8.992 1 11 1h5zm0 2.2c-1.391 0-2.316.634-3.328 2.457l-.547 1.02C9.48 11.666 5.8 19.349 5.8 23c0 4.195 3.125 6.8 10.2 6.8s10.2-2.605 10.2-6.8c0-3.651-3.68-11.334-6.325-16.323l-.547-1.02C18.316 3.834 17.391 3.2 16 3.2zm0 10.8c3.088 0 5.6 2.512 5.6 5.6 0 3.21-2.695 5.6-5.6 5.6-2.905 0-5.6-2.39-5.6-5.6 0-3.088 2.512-5.6 5.6-5.6zm0 2.2c-1.874 0-3.4 1.526-3.4 3.4 0 1.988 1.624 3.4 3.4 3.4s3.4-1.412 3.4-3.4c0-1.874-1.526-3.4-3.4-3.4z"/></svg>
+                <span>Airbnb Superhost Norm (10 Yrs)</span>
+            </div>
+            <div class="booking-trust-item">
+                <span>Top 5% of Homes on Airbnb</span>
+            </div>
+            <div class="booking-trust-item">
+                <span>Direct Savings Guaranteed</span>
+            </div>
+        </div>
+
+        <div class="direct-listings-links">
+            <span>Verified Guest Reviews:</span>
+            <a href="https://www.airbnb.com/rooms/1436142729628334485#reviews" target="_blank" rel="noopener noreferrer" class="direct-listing-link">
+                👑 The King Suite Reviews (39) &rarr;
+            </a>
+            <a href="https://www.airbnb.com/rooms/1436434703423646137#reviews" target="_blank" rel="noopener noreferrer" class="direct-listing-link">
+                🌿 The Queen Suite Reviews (28) &rarr;
+            </a>
+        </div>
+    </section>
+
 </div>
 
-<!-- CONTACT SECTION -->
+<!-- 8. DIRECT INQUIRY MODAL (SAVE 10%) -->
+<div class="modal-backdrop" id="direct-modal" onclick="handleModalBackdrop(event)" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card">
+        <button class="modal-close-btn" onclick="closeDirectModal()" aria-label="Close modal">✕</button>
+        <div class="modal-header">
+            <h3 id="modal-title">Direct Booking &bull; Save 10%</h3>
+            <p style="color: var(--text-muted); font-size: 0.92em; margin: 0;">Connect with host Norm Jones to lock in your direct rate</p>
+        </div>
+
+        <div class="modal-summary-box">
+            <div class="modal-summary-row">
+                <span>Selected Suite:</span>
+                <strong id="modal-suite-name">House &amp; Pool</strong>
+            </div>
+            <div class="modal-summary-row">
+                <span>Dates:</span>
+                <strong id="modal-dates">Select Dates</strong>
+            </div>
+            <div class="modal-summary-row">
+                <span>Stay Duration:</span>
+                <strong id="modal-nights">3 Nights</strong>
+            </div>
+            <div class="modal-summary-row">
+                <span>Guests:</span>
+                <strong id="modal-guests">2 Guests</strong>
+            </div>
+            <div class="modal-summary-row">
+                <span>Direct Benefit:</span>
+                <strong>10% Off Direct Rate</strong>
+            </div>
+        </div>
+
+        <div class="modal-actions">
+            <a href="mailto:normjones0529@hotmail.com" class="modal-btn-email" id="modal-email-btn">
+                <span>Email Host Norm Directly &rarr;</span>
+            </a>
+            <a href="tel:(616)283-0189" class="modal-btn-tel">
+                <span>Call Host Norm: (616) 283-0189</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- 9. FULLSCREEN LIGHTBOX MODAL -->
+<div class="lightbox-modal" id="lightbox-modal" onclick="handleLightboxBackdrop(event)" role="dialog" aria-modal="true" aria-label="Image Lightbox">
+    <button class="lightbox-ctrl-btn close" onclick="closeLightbox()" aria-label="Close Lightbox">✕</button>
+    <button class="lightbox-ctrl-btn prev" onclick="navigateLightbox(-1)" aria-label="Previous photo">‹</button>
+    
+    <div class="lightbox-inner">
+        <img src="" alt="Enlarged photo view" class="lightbox-img" id="lightbox-img">
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+
+    <button class="lightbox-ctrl-btn next" onclick="navigateLightbox(1)" aria-label="Next photo">›</button>
+</div>
+
+<!-- 10. LOCATION & CONTACT SECTION -->
 <div class="contact-section" id="contact">
-    <h2>Get In Touch</h2>
+    <h2>Get In Touch &amp; Location</h2>
     <div class="contact-grid">
         <div class="contact-item">
-            <h3>Property Name</h3>
-            <p>Summerset Cottage & Suites</p>
+            <h3>Property</h3>
+            <p>Summerset Cottage &amp; Suites</p>
         </div>
         <div class="contact-item">
             <h3>Address</h3>
             <p>6849 Wiley Road<br>Douglas, MI 49406-0992</p>
         </div>
         <div class="contact-item">
-            <h3>Phone</h3>
+            <h3>Direct Phone</h3>
             <p><a href="tel:(616)283-0189">(616) 283-0189</a></p>
         </div>
         <div class="contact-item">
-            <h3>Email</h3>
+            <h3>Direct Email</h3>
             <p><a href="mailto:normjones0529@hotmail.com">normjones0529@hotmail.com</a></p>
         </div>
         <div class="contact-item">
             <h3>Host</h3>
-            <p>Norm Jones</p>
+            <p>Norm Jones &bull; Superhost</p>
         </div>
     </div>
 
@@ -1627,7 +2312,7 @@
         <div class="map-frame-wrapper">
             <iframe 
                 src="https://maps.google.com/maps?q=6849+Wiley+Road,+Douglas,+MI+49406&t=k&z=17&ie=UTF8&iwloc=&output=embed" 
-                title="Summerset Cottage & Suites Location Map"
+                title="Summerset Cottage &amp; Suites Location Map in Douglas Michigan"
                 loading="lazy" 
                 allowfullscreen="" 
                 referrerpolicy="no-referrer-when-downgrade">
@@ -1639,196 +2324,174 @@
     </div>
 </div>
 
-<!-- GSAP Library -->
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<footer>
+    <p>&copy; 2026 Summerset Cottage &amp; Suites &bull; 6849 Wiley Road, Douglas, MI &bull; Designed &amp; Created by Norm Jones</p>
+</footer>
 
+<!-- JavaScript Application Engine -->
 <script>
-    function showSuite(suite) {
-        // Hide all suite contents
-        document.getElementById('king').classList.remove('active');
-        document.getElementById('queen').classList.remove('active');
-        document.getElementById('house').classList.remove('active');
-        
-        // Remove active class from all buttons
+    // ========================================================
+    // 1. NAVIGATION & SUITE TAB CONTROLLER
+    // ========================================================
+    function showSuite(suite, shouldScroll) {
+        const suites = ['house', 'king', 'queen'];
+        suites.forEach(s => {
+            const el = document.getElementById(s);
+            if (el) el.classList.remove('active');
+            
+            const navBtn = document.getElementById(`nav-btn-${s}`);
+            if (navBtn) navBtn.classList.remove('active');
+        });
+
+        // Activate selected
+        const target = document.getElementById(suite);
+        if (target) target.classList.add('active');
+
+        const activeNavBtn = document.getElementById(`nav-btn-${suite}`);
+        if (activeNavBtn) activeNavBtn.classList.add('active');
+
+        // Update suite button group
         const buttons = document.querySelectorAll('.suite-button');
-        buttons.forEach(btn => btn.classList.remove('active'));
-        
-        // Show selected suite
-        const targetSection = document.getElementById(suite);
-        if (targetSection) {
-            targetSection.classList.add('active');
-        }
-        
-        // Add active class to corresponding button
         buttons.forEach(btn => {
             if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(suite)) {
                 btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
             }
         });
 
-        // Re-evaluate GSAP perspective for the active suite's gallery
-        if (window.updateAllGalleries) {
-            requestAnimationFrame(() => {
-                window.updateAllGalleries();
-                setTimeout(window.updateAllGalleries, 50);
-                setTimeout(window.updateAllGalleries, 150);
-            });
+        if (shouldScroll) {
+            const anchor = document.getElementById('suites-anchor');
+            if (anchor) {
+                anchor.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Sync hub suite selection
+        setHubSuite(suite, false);
+    }
+
+    function toggleMobileMenu() {
+        const menu = document.getElementById('nav-menu');
+        if (menu) menu.classList.toggle('open');
+    }
+
+    // ========================================================
+    // 2. GALLERY CAROUSEL SCROLL ENGINE
+    // ========================================================
+    function scrollGallery(galleryId, direction) {
+        const gallery = document.getElementById(galleryId);
+        if (!gallery) return;
+        const scrollAmount = gallery.clientWidth * 0.75 * direction;
+        gallery.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+
+    // ========================================================
+    // 3. FULLSCREEN LIGHTBOX MODAL
+    // ========================================================
+    let currentLightboxGallery = [];
+    let currentLightboxIndex = 0;
+
+    function openLightbox(slideEl) {
+        const gallery = slideEl.closest('.photo-gallery');
+        if (!gallery) return;
+
+        const slides = Array.from(gallery.querySelectorAll('.gallery-slide-item'));
+        currentLightboxGallery = slides.map(s => ({
+            src: s.querySelector('img').src,
+            caption: s.getAttribute('data-caption') || s.querySelector('img').alt
+        }));
+
+        currentLightboxIndex = slides.indexOf(slideEl);
+        if (currentLightboxIndex === -1) currentLightboxIndex = 0;
+
+        renderLightbox();
+        const modal = document.getElementById('lightbox-modal');
+        if (modal) modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function renderLightbox() {
+        if (!currentLightboxGallery.length) return;
+        const item = currentLightboxGallery[currentLightboxIndex];
+        const imgEl = document.getElementById('lightbox-img');
+        const captionEl = document.getElementById('lightbox-caption');
+
+        if (imgEl) {
+            imgEl.src = item.src;
+            imgEl.alt = item.caption;
+        }
+        if (captionEl) {
+            captionEl.textContent = `${item.caption} (${currentLightboxIndex + 1} of ${currentLightboxGallery.length})`;
         }
     }
 
-    // GSAP Horizontal Perspective Scroll & Drag Engine for All Galleries
-    function initGalleryPerspective() {
-        const galleries = document.querySelectorAll('.photo-gallery');
-
-        window.updateAllGalleries = function() {
-            galleries.forEach(gallery => {
-                if (gallery._updatePerspective) {
-                    gallery._updatePerspective();
-                }
-            });
-        };
-
-        galleries.forEach(gallery => {
-            const images = gallery.querySelectorAll('img');
-            let isDown = false;
-            let startX, scrollLeft;
-
-            function updatePerspective() {
-                const rect = gallery.getBoundingClientRect();
-                // Skip calculation if gallery is inside a hidden tab (width is 0)
-                if (!rect.width || rect.width === 0) return;
-
-                const galleryCenter = rect.left + rect.width / 2;
-                const maxDistance = rect.width / 2;
-
-                images.forEach(img => {
-                    const imgRect = img.getBoundingClientRect();
-                    if (!imgRect.width || imgRect.width === 0) return;
-
-                    const imgCenter = imgRect.left + imgRect.width / 2;
-                    // Normalized distance from center (-1 to 1 across visible viewport)
-                    const distFromCenter = (imgCenter - galleryCenter) / maxDistance;
-                    const clampedDist = Math.max(-1.5, Math.min(1.5, distFromCenter));
-                    const absDist = Math.min(1, Math.abs(clampedDist));
-
-                    // Scale up to 1.1 at center, smoothly down to 0.82 at edges
-                    const scale = 1.1 - (absDist * 0.28);
-
-                    // Dynamic 3D Y-axis rotation based on scroll progress along X-axis
-                    const rotateY = -clampedDist * 32;
-
-                    // Subtle dynamic tilt on Z-axis
-                    const rotateZ = clampedDist * 2.5;
-
-                    // Opacity focus towards center
-                    const opacity = 1 - (absDist * 0.35);
-
-                    // 3D depth pop towards viewer at center
-                    const translateZ = (1 - absDist) * 50;
-
-                    gsap.to(img, {
-                        scale: scale,
-                        rotationY: rotateY,
-                        rotationZ: rotateZ,
-                        z: translateZ,
-                        opacity: opacity,
-                        duration: 0.25,
-                        ease: 'power1.out',
-                        overwrite: 'auto'
-                    });
-
-                    img.style.zIndex = Math.round((1 - absDist) * 100);
-                });
-            }
-
-            gallery._updatePerspective = updatePerspective;
-
-            // Mouse Drag to Scroll
-            gallery.addEventListener('mousedown', (e) => {
-                isDown = true;
-                gallery.classList.add('grabbing');
-                startX = e.pageX - gallery.offsetLeft;
-                scrollLeft = gallery.scrollLeft;
-            });
-
-            window.addEventListener('mouseup', () => {
-                if (isDown) {
-                    isDown = false;
-                    gallery.classList.remove('grabbing');
-                }
-            });
-
-            window.addEventListener('mousemove', (e) => {
-                if (!isDown) return;
-                e.preventDefault();
-                const x = e.pageX - gallery.offsetLeft;
-                const walk = (x - startX) * 1.5;
-                gallery.scrollLeft = scrollLeft - walk;
-                updatePerspective();
-            });
-
-            // Smooth Horizontal Mouse Wheel Scroll
-            gallery.addEventListener('wheel', (e) => {
-                if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-                    e.preventDefault();
-                    gallery.scrollLeft += e.deltaY;
-                    updatePerspective();
-                }
-            }, { passive: false });
-
-            // Scroll Listener
-            gallery.addEventListener('scroll', () => {
-                updatePerspective();
-            }, { passive: true });
-
-            // Initial calculation
-            updatePerspective();
-            window.addEventListener('resize', updatePerspective);
-        });
+    function navigateLightbox(delta) {
+        if (!currentLightboxGallery.length) return;
+        currentLightboxIndex = (currentLightboxIndex + delta + currentLightboxGallery.length) % currentLightboxGallery.length;
+        renderLightbox();
     }
 
-    // Initialize after DOM and GSAP load
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initGalleryPerspective);
-    } else {
-        initGalleryPerspective();
+    function closeLightbox() {
+        const modal = document.getElementById('lightbox-modal');
+        if (modal) modal.classList.remove('open');
+        document.body.style.overflow = '';
     }
 
+    function handleLightboxBackdrop(e) {
+        if (e.target.id === 'lightbox-modal') {
+            closeLightbox();
+        }
+    }
 
-    // ==========================================
-    // Interactive Airbnb Booking Widget Logic
-    // ==========================================
-    const AIRBNB_SUITES = {
+    // Keyboard support for Lightbox
+    window.addEventListener('keydown', (e) => {
+        const modal = document.getElementById('lightbox-modal');
+        if (modal && modal.classList.contains('open')) {
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') navigateLightbox(-1);
+            if (e.key === 'ArrowRight') navigateLightbox(1);
+        }
+    });
+
+    // ========================================================
+    // 4. MASTER BOOKING HUB CONTROLLER & PARAM-SYNC
+    // ========================================================
+    const SUITE_DATA = {
+        house: {
+            name: 'House & Pool (Dual Suites)',
+            airbnbId: '1436142729628334485',
+            maxGuests: 4
+        },
         king: {
-            id: '1436142729628334485',
             name: 'The King Suite',
+            airbnbId: '1436142729628334485',
             maxGuests: 2
         },
         queen: {
-            id: '1436434703423646137',
             name: 'The Queen Suite',
+            airbnbId: '1436434703423646137',
             maxGuests: 2
         }
     };
 
-    const bookingWidgetsState = {
-        house: { selectedSuite: 'king', adults: 2, children: 0 },
-        king: { selectedSuite: 'king', adults: 2, children: 0 },
-        queen: { selectedSuite: 'queen', adults: 2, children: 0 }
+    const bookingHubState = {
+        suite: 'house',
+        adults: 2,
+        children: 0
     };
 
-    function initBookingWidgets() {
+    function initBookingHub() {
         const today = new Date();
         const yyyy = today.getFullYear();
         const mm = String(today.getMonth() + 1).padStart(2, '0');
         const dd = String(today.getDate()).padStart(2, '0');
         const minDateStr = `${yyyy}-${mm}-${dd}`;
 
-        // Default checkin 7 days from now, checkout 10 days from now (3 nights)
-        const checkinDefault = new Date();
-        checkinDefault.setDate(today.getDate() + 7);
-        const checkoutDefault = new Date();
-        checkoutDefault.setDate(today.getDate() + 10);
+        const cinDefault = new Date();
+        cinDefault.setDate(today.getDate() + 7);
+        const coutDefault = new Date();
+        coutDefault.setDate(today.getDate() + 10);
 
         const formatDate = (d) => {
             const y = d.getFullYear();
@@ -1837,159 +2500,205 @@
             return `${y}-${m}-${day}`;
         };
 
-        ['house', 'king', 'queen'].forEach(wId => {
-            const cinInput = document.getElementById(`checkin-${wId}`);
-            const coutInput = document.getElementById(`checkout-${wId}`);
-            if (cinInput && coutInput) {
-                cinInput.min = minDateStr;
-                coutInput.min = minDateStr;
-                cinInput.value = formatDate(checkinDefault);
-                coutInput.value = formatDate(checkoutDefault);
-                updateBookingWidget(wId);
+        const cinInput = document.getElementById('checkin-date');
+        const coutInput = document.getElementById('checkout-date');
+
+        if (cinInput && coutInput) {
+            cinInput.min = minDateStr;
+            coutInput.min = minDateStr;
+            cinInput.value = formatDate(cinDefault);
+            coutInput.value = formatDate(coutDefault);
+        }
+
+        updateHubDisplay();
+
+        // Close guest popup on click outside
+        document.addEventListener('click', (e) => {
+            const popup = document.getElementById('guests-popup');
+            const trigger = document.getElementById('guests-trigger');
+            if (popup && trigger && !trigger.contains(e.target) && !popup.contains(e.target)) {
+                popup.classList.remove('open');
+                trigger.classList.remove('active');
+            }
+        });
+    }
+
+    function setHubSuite(suiteKey, autoScroll) {
+        bookingHubState.suite = suiteKey;
+        const items = document.querySelectorAll('.suite-toggle-item');
+        items.forEach(item => {
+            if (item.getAttribute('data-suite') === suiteKey) {
+                item.classList.add('active');
+            } else {
+                item.classList.remove('active');
             }
         });
 
-        // Close guest popup on outside click
-        document.addEventListener('click', function(e) {
-            ['house', 'king', 'queen'].forEach(wId => {
-                const popup = document.getElementById(`guests-popup-${wId}`);
-                const trigger = document.getElementById(`guests-trigger-${wId}`);
-                if (popup && trigger && !trigger.contains(e.target) && !popup.contains(e.target)) {
-                    popup.classList.remove('open');
-                    trigger.classList.remove('active');
-                }
-            });
-        });
-    }
-
-    function selectWidgetSuite(widgetId, suiteKey) {
-        if (!bookingWidgetsState[widgetId]) return;
-        bookingWidgetsState[widgetId].selectedSuite = suiteKey;
-
-        const widgetEl = document.getElementById(`booking-widget-${widgetId}`);
-        if (widgetEl) {
-            const toggleButtons = widgetEl.querySelectorAll('.suite-toggle-item');
-            toggleButtons.forEach(btn => {
-                if (btn.getAttribute('data-suite') === suiteKey) {
-                    btn.classList.add('active');
-                } else {
-                    btn.classList.remove('active');
-                }
-            });
+        // Enforce max guests
+        const max = SUITE_DATA[suiteKey].maxGuests;
+        if (bookingHubState.adults > max) {
+            bookingHubState.adults = max;
+            bookingHubState.children = 0;
+        } else if (bookingHubState.adults + bookingHubState.children > max) {
+            bookingHubState.children = Math.max(0, max - bookingHubState.adults);
         }
-        updateBookingWidget(widgetId);
+
+        updateHubDisplay();
+
+        if (autoScroll) {
+            const bookingSection = document.getElementById('booking');
+            if (bookingSection) {
+                bookingSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
     }
 
-    function toggleGuestsPopup(widgetId) {
-        const popup = document.getElementById(`guests-popup-${widgetId}`);
-        const trigger = document.getElementById(`guests-trigger-${widgetId}`);
+    function selectBookingSuite(suiteKey) {
+        setHubSuite(suiteKey, true);
+    }
+
+    function toggleGuestsDropdown() {
+        const popup = document.getElementById('guests-popup');
+        const trigger = document.getElementById('guests-trigger');
         if (popup && trigger) {
             const isOpen = popup.classList.toggle('open');
             trigger.classList.toggle('active', isOpen);
         }
     }
 
-    function adjustGuests(widgetId, type, delta) {
-        const state = bookingWidgetsState[widgetId];
-        if (!state) return;
-
-        const suiteConfig = AIRBNB_SUITES[state.selectedSuite] || AIRBNB_SUITES.king;
-        const maxTotalGuests = suiteConfig.maxGuests;
-
+    function updateGuests(type, delta) {
+        const max = SUITE_DATA[bookingHubState.suite].maxGuests;
         if (type === 'adults') {
-            const nextVal = state.adults + delta;
-            if (nextVal >= 1 && (nextVal + state.children) <= maxTotalGuests) {
-                state.adults = nextVal;
+            const next = bookingHubState.adults + delta;
+            if (next >= 1 && (next + bookingHubState.children) <= max) {
+                bookingHubState.adults = next;
             }
         } else if (type === 'children') {
-            const nextVal = state.children + delta;
-            if (nextVal >= 0 && (state.adults + nextVal) <= maxTotalGuests) {
-                state.children = nextVal;
+            const next = bookingHubState.children + delta;
+            if (next >= 0 && (bookingHubState.adults + next) <= max) {
+                bookingHubState.children = next;
             }
         }
-
-        const adultsCountEl = document.getElementById(`adults-count-${widgetId}`);
-        const childrenCountEl = document.getElementById(`children-count-${widgetId}`);
-        if (adultsCountEl) adultsCountEl.textContent = state.adults;
-        if (childrenCountEl) childrenCountEl.textContent = state.children;
-
-        const totalGuests = state.adults + state.children;
-        const labelEl = document.getElementById(`guests-label-${widgetId}`);
-        if (labelEl) {
-            labelEl.textContent = `${totalGuests} ${totalGuests === 1 ? 'Guest' : 'Guests'} (${state.adults} ${state.adults === 1 ? 'Adult' : 'Adults'}${state.children > 0 ? `, ${state.children} Child${state.children > 1 ? 'ren' : ''}` : ''})`;
-        }
-
-        updateBookingWidget(widgetId);
+        updateHubDisplay();
     }
 
-    function updateBookingWidget(widgetId) {
-        const state = bookingWidgetsState[widgetId];
-        if (!state) return;
+    function handleDateChange() {
+        const cinInput = document.getElementById('checkin-date');
+        const coutInput = document.getElementById('checkout-date');
+        if (!cinInput || !coutInput) return;
 
-        const cinInput = document.getElementById(`checkin-${widgetId}`);
-        const coutInput = document.getElementById(`checkout-${widgetId}`);
-        const ctaBtn = document.getElementById(`booking-cta-${widgetId}`);
-        const nightsBadge = document.getElementById(`nights-badge-${widgetId}`);
-
-        if (!cinInput || !coutInput || !ctaBtn) return;
-
-        const checkInVal = cinInput.value;
-        let checkOutVal = coutInput.value;
-
-        // Ensure checkout is strictly after checkin
-        if (checkInVal) {
-            const nextDay = new Date(checkInVal);
+        if (cinInput.value) {
+            const nextDay = new Date(cinInput.value);
             nextDay.setDate(nextDay.getDate() + 1);
             const y = nextDay.getFullYear();
             const m = String(nextDay.getMonth() + 1).padStart(2, '0');
             const d = String(nextDay.getDate()).padStart(2, '0');
-            const minCoutStr = `${y}-${m}-${d}`;
-            coutInput.min = minCoutStr;
+            const minCout = `${y}-${m}-${d}`;
+            coutInput.min = minCout;
 
-            if (checkOutVal && checkOutVal <= checkInVal) {
-                checkOutVal = minCoutStr;
-                coutInput.value = minCoutStr;
+            if (coutInput.value && coutInput.value <= cinInput.value) {
+                coutInput.value = minCout;
             }
         }
+        updateHubDisplay();
+    }
 
-        // Calculate nights
+    function updateHubDisplay() {
+        const cinInput = document.getElementById('checkin-date');
+        const coutInput = document.getElementById('checkout-date');
+        const nightsBadge = document.getElementById('nights-badge');
+        const guestsLabel = document.getElementById('guests-display-label');
+        const adultsCount = document.getElementById('count-adults');
+        const childrenCount = document.getElementById('count-children');
+        const airbnbBtn = document.getElementById('btn-airbnb-deep');
+        const directBtn = document.getElementById('btn-direct-save');
+
+        if (adultsCount) adultsCount.textContent = bookingHubState.adults;
+        if (childrenCount) childrenCount.textContent = bookingHubState.children;
+
+        const totalGuests = bookingHubState.adults + bookingHubState.children;
+        if (guestsLabel) {
+            guestsLabel.textContent = `${totalGuests} ${totalGuests === 1 ? 'Guest' : 'Guests'} (${bookingHubState.adults} ${bookingHubState.adults === 1 ? 'Adult' : 'Adults'}${bookingHubState.children > 0 ? `, ${bookingHubState.children} Child${bookingHubState.children > 1 ? 'ren' : ''}` : ''})`;
+        }
+
         let nightCount = 0;
-        if (checkInVal && checkOutVal) {
-            const d1 = new Date(checkInVal);
-            const d2 = new Date(checkOutVal);
-            const diffTime = d2 - d1;
-            nightCount = Math.max(1, Math.round(diffTime / (1000 * 60 * 60 * 24)));
-            if (nightsBadge) {
-                nightsBadge.textContent = `${nightCount} ${nightCount === 1 ? 'Night' : 'Nights'}`;
-            }
-        } else if (nightsBadge) {
-            nightsBadge.textContent = 'Select Dates';
+        if (cinInput && coutInput && cinInput.value && coutInput.value) {
+            const d1 = new Date(cinInput.value);
+            const d2 = new Date(coutInput.value);
+            nightCount = Math.max(1, Math.round((d2 - d1) / (1000 * 60 * 60 * 24)));
+            if (nightsBadge) nightsBadge.textContent = `${nightCount} ${nightCount === 1 ? 'Night' : 'Nights'}`;
         }
 
-        const suiteKey = state.selectedSuite || 'king';
-        const suiteInfo = AIRBNB_SUITES[suiteKey] || AIRBNB_SUITES.king;
+        const suiteInfo = SUITE_DATA[bookingHubState.suite];
 
-        // Build dynamic direct Airbnb listing URL
-        let url = `https://www.airbnb.com/rooms/${suiteInfo.id}?`;
-        const params = [];
-        if (checkInVal) params.push(`check_in=${encodeURIComponent(checkInVal)}`);
-        if (checkOutVal) params.push(`check_out=${encodeURIComponent(checkOutVal)}`);
-        if (state.adults) params.push(`adults=${encodeURIComponent(state.adults)}`);
-        if (state.children > 0) params.push(`children=${encodeURIComponent(state.children)}`);
-        url += params.join('&');
+        // Build synchronized Airbnb dynamic link
+        if (airbnbBtn) {
+            let airbnbUrl = `https://www.airbnb.com/rooms/${suiteInfo.airbnbId}?`;
+            const params = [];
+            if (cinInput && cinInput.value) params.push(`check_in=${encodeURIComponent(cinInput.value)}`);
+            if (coutInput && coutInput.value) params.push(`check_out=${encodeURIComponent(coutInput.value)}`);
+            if (bookingHubState.adults) params.push(`adults=${encodeURIComponent(bookingHubState.adults)}`);
+            if (bookingHubState.children > 0) params.push(`children=${encodeURIComponent(bookingHubState.children)}`);
+            airbnbUrl += params.join('&');
+            airbnbBtn.href = airbnbUrl;
+            airbnbBtn.querySelector('span').textContent = `Reserve ${suiteInfo.name} on Airbnb`;
+        }
 
-        ctaBtn.href = url;
-        const ctaSpan = ctaBtn.querySelector('span');
-        if (ctaSpan) {
-            ctaSpan.textContent = `Check Availability or Book ${suiteInfo.name} at Airbnb`;
+        if (directBtn) {
+            directBtn.querySelector('span').textContent = `Book ${suiteInfo.name} Direct & Save 10% \u2192`;
         }
     }
 
-    // Initialize all booking widgets on load
+    // ========================================================
+    // 5. DIRECT INQUIRY MODAL ENGINE
+    // ========================================================
+    function openDirectInquiryModal() {
+        const cinInput = document.getElementById('checkin-date');
+        const coutInput = document.getElementById('checkout-date');
+        const suiteInfo = SUITE_DATA[bookingHubState.suite];
+
+        const checkIn = cinInput ? cinInput.value : 'Flexible';
+        const checkOut = coutInput ? coutInput.value : 'Flexible';
+        const totalGuests = bookingHubState.adults + bookingHubState.children;
+
+        document.getElementById('modal-suite-name').textContent = suiteInfo.name;
+        document.getElementById('modal-dates').textContent = `${checkIn} to ${checkOut}`;
+        document.getElementById('modal-guests').textContent = `${totalGuests} Guests (${bookingHubState.adults} Adults${bookingHubState.children > 0 ? `, ${bookingHubState.children} Children` : ''})`;
+
+        const nightsBadge = document.getElementById('nights-badge');
+        document.getElementById('modal-nights').textContent = nightsBadge ? nightsBadge.textContent : 'Custom Stay';
+
+        // Pre-fill email body
+        const subject = encodeURIComponent(`Direct Booking Inquiry - ${suiteInfo.name} (Save 10%)`);
+        const body = encodeURIComponent(`Hi Norm,\n\nI would like to book directly with you and save 10% on my stay at Summerset Cottage & Suites!\n\nDetails:\n- Suite: ${suiteInfo.name}\n- Check-In: ${checkIn}\n- Check-Out: ${checkOut}\n- Guests: ${totalGuests} (${bookingHubState.adults} Adults, ${bookingHubState.children} Children)\n\nPlease let me know your direct availability and invoice details.\n\nThank you!`);
+        
+        const emailBtn = document.getElementById('modal-email-btn');
+        if (emailBtn) {
+            emailBtn.href = `mailto:normjones0529@hotmail.com?subject=${subject}&body=${body}`;
+        }
+
+        const modal = document.getElementById('direct-modal');
+        if (modal) modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeDirectModal() {
+        const modal = document.getElementById('direct-modal');
+        if (modal) modal.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    function handleModalBackdrop(e) {
+        if (e.target.id === 'direct-modal') {
+            closeDirectModal();
+        }
+    }
+
+    // Initialize all components on DOM Ready
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initBookingWidgets);
+        document.addEventListener('DOMContentLoaded', initBookingHub);
     } else {
-        initBookingWidgets();
+        initBookingHub();
     }
 </script>
 
