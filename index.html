@@ -1634,7 +1634,7 @@
 
 <!-- 2. HERO IMAGE & BRAND HEADER -->
 <div class="hero-banner-wrap">
-    <img src="Norms house front.jpeg" alt="Summerset Cottage &amp; Suites private grounds and residence in Douglas, Michigan" class="hero-banner-img" fetchpriority="high">
+    <img src="Norms House backyard pool.jpeg" alt="Summerset Cottage &amp; Suites private heated saltwater pool and grounds in Douglas, Michigan" class="hero-banner-img" fetchpriority="high">
 </div>
 
 <header class="brand-header">
@@ -1657,49 +1657,91 @@
         </div>
     </div>
 
-<!-- House & Pool Gallery -->
-<div class="gallery-container">
-    <button class="gallery-ctrl-btn prev" onclick="scrollGallery('gallery-house', -1)" aria-label="Previous image">‹</button>
-    <button class="gallery-ctrl-btn next" onclick="scrollGallery('gallery-house', 1)" aria-label="Next image">›</button>
-    <div class="gallery-wrapper">
-        <div class="photo-gallery" id="gallery-house">
-            <div class="gallery-slide-item" onclick="openLightbox(this)" data-caption="Sun deck with comfortable outdoor furniture">
-                <img src="NORM HOUSE AND POOL/IMG-20260802-WA0050.jpg" alt="Sun deck with comfortable outdoor furniture" loading="lazy" decoding="async" />
-                <span class="gallery-zoom-badge">🔍 Zoom</span>
-            </div>
-            <div class="gallery-slide-item" onclick="openLightbox(this)" data-caption="Architectural garden walkways and private sitting alcoves">
-                <img src="NORM HOUSE AND POOL/IMG-20260802-WA0098.jpg" alt="Landscaped walkway through perennial gardens" loading="lazy" decoding="async" />
-                <span class="gallery-zoom-badge">🔍 Zoom</span>
-            </div>
-            <div class="gallery-slide-item" onclick="openLightbox(this)" data-caption="Verdant botanical landscaping designed and maintained by host Norm">
-                <img src="NORM HOUSE AND POOL/IMG-20260802-WA0125(1).jpg" alt="Botanic garden landscaping and flora" loading="lazy" decoding="async" />
-                <span class="gallery-zoom-badge">🔍 Zoom</span>
-            </div>
-            <div class="gallery-slide-item" onclick="openLightbox(this)" data-caption="Evening twilight by the illuminated saltwater pool">
-                <img src="NORM HOUSE AND POOL/IMG-20260802-WA0157.jpg" alt="Poolside ambiance in Douglas Michigan" loading="lazy" decoding="async" />
-                <span class="gallery-zoom-badge">🔍 Zoom</span>
-            </div>
-            <div class="gallery-slide-item" onclick="openLightbox(this)" data-caption="Shaded al-fresco dining table nestled under the trees">
-                <img src="NORM HOUSE AND POOL/Norms house Yard table.jpeg" alt="Shaded outdoor dining table and seating" loading="lazy" decoding="async" />
-                <span class="gallery-zoom-badge">🔍 Zoom</span>
-            </div>
-            <div class="gallery-slide-item" onclick="openLightbox(this)" data-caption="Panoramic view of the private grounds and pool sanctuary">
-                <img src="NORM HOUSE AND POOL/Screenshot_20260812_234649_Airbnb.jpg" alt="Aerial perspective of pool and house grounds" loading="lazy" decoding="async" />
-                <span class="gallery-zoom-badge">🔍 Zoom</span>
+    <!-- ========================================================
+         SUITE 1: HOUSE & POOL
+    ======================================================== -->
+    <div id="house" class="suite-content active" role="region" aria-labelledby="title-house">
+        <div class="title-wrapper">
+            <h2 class="suite-title" id="title-house">House &amp; Pool</h2>
+            <div class="creator-tag">Designed &amp; Created by Norm Jones</div>
+            <div class="location">Douglas, Michigan</div>
+        </div>
+
+        <div class="quick-stats">
+            <span>Two Private Suites</span> 
+            <span>Up to 4 Guests</span> 
+            <span>Private Heated Saltwater Pool</span> 
+            <span>Top 5% Superhost on Airbnb</span>
+        </div>
+
+        <div class="section-block description">
+            <h3 class="section-title">A Private 2-Acre Botanic Oasis</h3>
+            <p>Escape to an extraordinary private retreat featuring two curated luxury suites, a heated saltwater swimming pool, and professionally designed botanic gardens. Ideal for couples traveling together, small families, and extended luxury stays seeking complete seclusion.</p>
+            <p>Enjoy manicured outdoor living spaces with shaded dining pergolas, sun lounges overlooking the meadow, and seamless access to both downtown Douglas and the sandy shores of Lake Michigan.</p>
+        </div>
+        
+        <!-- Photo Carousel -->
+        <div class="section-block">
+            <h3 class="section-title">Explore the Grounds &amp; Pool</h3>
+            <p style="text-align: center; color: var(--text-muted); font-size: 0.92em; margin-bottom: 12px;">Swipe or use arrows to view gallery &bull; Click any photo to enlarge</p>
+            
+            <div class="gallery-container">
+                <button class="gallery-ctrl-btn prev" onclick="scrollGallery('gallery-house', -1)" aria-label="Previous image">‹</button>
+                <button class="gallery-ctrl-btn next" onclick="scrollGallery('gallery-house', 1)" aria-label="Next image">›</button>
+
+                <div class="gallery-wrapper">
+                    <div class="photo-gallery" id="gallery-house">
+                        <div class="gallery-slide-item" onclick="openLightbox(this)" data-caption="Resort-style heated saltwater swimming pool with expansive sun deck and lounge chairs">
+                            <img src="NORM HOUSE AND POOL/IMG-20260802-WA0023.jpg" alt="Resort-style heated saltwater pool with private sundeck and loungers" loading="eager" decoding="async">
+                            <span class="gallery-zoom-badge">🔍 Zoom</span>
+                        </div>
+                        <div class="gallery-slide-item" onclick="openLightbox(this)" data-caption="Pristine poolside view overlooking lush meadow and manicured gardens">
+                            <img src="NORM HOUSE AND POOL/IMG-20260802-WA0044.jpg" alt="Poolside perspective overlooking meadow grounds" loading="lazy" decoding="async">
+                            <span class="gallery-zoom-badge">🔍 Zoom</span>
+                        </div>
+                        <div class="gallery-slide-item" onclick="openLightbox(this)" data-caption="Outdoor living and dining terrace surrounded by perennial flower beds">
+                            <img src="NORM HOUSE AND POOL/IMG-20260802-WA0046.jpg" alt="Outdoor living terrace and dining garden" loading="lazy" decoding="async">
+                            <span class="gallery-zoom-badge">🔍 Zoom</span>
+                        </div>
+                        <div class="gallery-slide-item" onclick="openLightbox(this)" data-caption="Sun deck with comfortable outdoor furniture">
+                            <img src="NORM HOUSE AND POOL/IMG-20260802-WA0050.jpg" alt="Sun deck with comfortable outdoor furniture" loading="lazy" decoding="async">
+                            <span class="gallery-zoom-badge">🔍 Zoom</span>
+                        </div>
+                        <div class="gallery-slide-item" onclick="openLightbox(this)" data-caption="Architectural garden walkways and private sitting alcoves">
+                            <img src="NORM HOUSE AND POOL/IMG-20260802-WA0098.jpg" alt="Landscaped walkway through perennial gardens" loading="lazy" decoding="async">
+                            <span class="gallery-zoom-badge">🔍 Zoom</span>
+                        </div>
+                        <div class="gallery-slide-item" onclick="openLightbox(this)" data-caption="Verdant botanical landscaping designed and maintained by host Norm">
+                            <img src="NORM HOUSE AND POOL/IMG-20260802-WA0125(1).jpg" alt="Botanic garden landscaping and flora" loading="lazy" decoding="async">
+                            <span class="gallery-zoom-badge">🔍 Zoom</span>
+                        </div>
+                        <div class="gallery-slide-item" onclick="openLightbox(this)" data-caption="Evening twilight by the illuminated saltwater pool">
+                            <img src="NORM HOUSE AND POOL/IMG-20260802-WA0157.jpg" alt="Poolside ambiance in Douglas Michigan" loading="lazy" decoding="async">
+                            <span class="gallery-zoom-badge">🔍 Zoom</span>
+                        </div>
+                        <div class="gallery-slide-item" onclick="openLightbox(this)" data-caption="Shaded al-fresco dining table nestled under the trees">
+                            <img src="NORM HOUSE AND POOL/Norms house Yard table.jpeg" alt="Shaded outdoor dining table and seating" loading="lazy" decoding="async">
+                            <span class="gallery-zoom-badge">🔍 Zoom</span>
+                        </div>
+                        <div class="gallery-slide-item" onclick="openLightbox(this)" data-caption="Panoramic view of the private grounds and pool sanctuary">
+                            <img src="NORM HOUSE AND POOL/Screenshot_20260812_234649_Airbnb.jpg" alt="Aerial perspective of pool and house grounds" loading="lazy" decoding="async">
+                            <span class="gallery-zoom-badge">🔍 Zoom</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-status-bar">
+                    <span>Gallery: <strong>House &amp; Grounds</strong></span>
+                    <span class="gallery-counter" id="counter-gallery-house">Swipe to explore (9 photos)</span>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="gallery-status-bar">
-        <span>Gallery: <strong>House &amp; Grounds</strong></span>
-        <span class="gallery-counter" id="counter-gallery-house">Swipe to explore (9 photos)</span>
-    </div>
-</div>
 
         <!-- Suite Action & Direct Savings Card -->
         <div class="suite-action-card">
             <div class="suite-action-info">
                 <span class="suite-action-badge">Direct Host Benefit</span>
-                <h4>Save 10% on House &amp; Pool</h4>
+                <h4>Save 10%</h4>
                 <p>Book directly with host Norm to save <strong>10% off platform service fees</strong>, or reserve with verified Airbnb Superhost protection.</p>
             </div>
             <div class="suite-action-buttons">
