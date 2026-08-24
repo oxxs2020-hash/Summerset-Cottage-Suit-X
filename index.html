@@ -1614,7 +1614,7 @@
         </a>
 
         <div class="nav-menu" id="nav-menu">
-            <button class="nav-link-btn active" onclick="showSuite('house', true)" id="nav-btn-house">House &amp; Pool</button>
+
             <button class="nav-link-btn" onclick="showSuite('king', true)" id="nav-btn-king">King Suite</button>
             <button class="nav-link-btn" onclick="showSuite('queen', true)" id="nav-btn-queen">Queen Suite</button>
             <a href="#comparison" class="nav-link-btn">Compare</a>
@@ -1658,52 +1658,6 @@
     </div>
 
     <!-- ========================================================
-         SUITE 1: HOUSE & POOL
-    ======================================================== -->
-    <div id="house" class="suite-content active" role="region" aria-labelledby="title-house">
-        <div class="title-wrapper">
-            <h2 class="suite-title" id="title-house">House &amp; Pool</h2>
-            <div class="creator-tag">Designed &amp; Created by Norm Jones</div>
-            <div class="location">Douglas, Michigan</div>
-        </div>
-
-        <div class="quick-stats">
-            <span>Two Private Suites</span> 
-            <span>Up to 4 Guests</span> 
-            <span>Private Heated Saltwater Pool</span> 
-            <span>Top 5% Superhost on Airbnb</span>
-        </div>
-
-        <div class="section-block description">
-            <h3 class="section-title">A Private 2-Acre Botanic Oasis</h3>
-            <p>Escape to an extraordinary private retreat featuring two curated luxury suites, a heated saltwater swimming pool, and professionally designed botanic gardens. Ideal for couples traveling together, small families, and extended luxury stays seeking complete seclusion.</p>
-            <p>Enjoy manicured outdoor living spaces with shaded dining pergolas, sun lounges overlooking the meadow, and seamless access to both downtown Douglas and the sandy shores of Lake Michigan.</p>
-        </div>
-        
-        <!-- Photo Carousel -->
-        <div class="section-block">
-            <h3 class="section-title">Explore the Grounds &amp; Pool</h3>
-            <p style="text-align: center; color: var(--text-muted); font-size: 0.92em; margin-bottom: 12px;">Swipe or use arrows to view gallery &bull; Click any photo to enlarge</p>
-            
-            <div class="gallery-container">
-                <button class="gallery-ctrl-btn prev" onclick="scrollGallery('gallery-house', -1)" aria-label="Previous image">‹</button>
-                <button class="gallery-ctrl-btn next" onclick="scrollGallery('gallery-house', 1)" aria-label="Next image">›</button>
-
-                <div class="gallery-wrapper">
-                    <div class="photo-gallery" id="gallery-house">
-                        <div class="gallery-slide-item" onclick="openLightbox(this)" data-caption="Resort-style heated saltwater swimming pool with expansive sun deck and lounge chairs">
-                            <img src="NORM HOUSE AND POOL/IMG-20260802-WA0023.jpg" alt="Resort-style heated saltwater pool with private sundeck and loungers" loading="eager" decoding="async">
-                            <span class="gallery-zoom-badge">🔍 Zoom</span>
-                        </div>
-                        <div class="gallery-slide-item" onclick="openLightbox(this)" data-caption="Pristine poolside view overlooking lush meadow and manicured gardens">
-                            <img src="NORM HOUSE AND POOL/IMG-20260802-WA0044.jpg" alt="Poolside perspective overlooking meadow grounds" loading="lazy" decoding="async">
-                            <span class="gallery-zoom-badge">🔍 Zoom</span>
-                        </div>
-                        <div class="gallery-slide-item" onclick="openLightbox(this)" data-caption="Outdoor living and dining terrace surrounded by perennial flower beds">
-                            <img src="NORM HOUSE AND POOL/IMG-20260802-WA0046.jpg" alt="Outdoor living terrace and dining garden" loading="lazy" decoding="async">
-                            <span class="gallery-zoom-badge">🔍 Zoom</span>
-                        </div>
-                        <div class="gallery-slide-item" onclick="openLightbox(this)" data-caption="Sun-drenched pool deck with comfortable seating for outdoor relaxation">
                             <img src="NORM HOUSE AND POOL/IMG-20260802-WA0050.jpg" alt="Sun deck with comfortable outdoor furniture" loading="lazy" decoding="async">
                             <span class="gallery-zoom-badge">🔍 Zoom</span>
                         </div>
@@ -2105,13 +2059,7 @@
 
         <!-- Suite Selector Grid -->
         <div class="suite-toggle-grid">
-            <div class="suite-toggle-item active" data-suite="house" onclick="setHubSuite('house')">
-                <div class="suite-toggle-title">
-                    <span>House &amp; Pool</span>
-                    <span class="suite-toggle-badge">Dual Suites</span>
-                </div>
-                <div class="suite-toggle-desc">King + Queen Bed &bull; Pool &bull; Up to 4 Guests</div>
-            </div>
+
 
             <div class="suite-toggle-item" data-suite="king" onclick="setHubSuite('king')">
                 <div class="suite-toggle-title">
@@ -2327,7 +2275,7 @@
     // 1. NAVIGATION & SUITE TAB CONTROLLER
     // ========================================================
     function showSuite(suite, shouldScroll) {
-        const suites = ['house', 'king', 'queen'];
+        const suites = ['king', 'queen'];
         suites.forEach(s => {
             const el = document.getElementById(s);
             if (el) el.classList.remove('active');
@@ -2451,11 +2399,7 @@
     // 4. MASTER BOOKING HUB CONTROLLER & PARAM-SYNC
     // ========================================================
     const SUITE_DATA = {
-        house: {
-            name: 'House & Pool (Dual Suites)',
-            airbnbId: '1436142729628334485',
-            maxGuests: 4
-        },
+
         king: {
             name: 'The King Suite',
             airbnbId: '1436142729628334485',
@@ -2469,7 +2413,7 @@
     };
 
     const bookingHubState = {
-        suite: 'house',
+        suite: 'king',
         adults: 2,
         children: 0
     };
