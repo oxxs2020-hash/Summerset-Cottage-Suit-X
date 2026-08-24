@@ -2378,13 +2378,95 @@
     }
 
     // ========================================================
-    // 2. GALLERY CAROUSEL SCROLL ENGINE
+    // 2. GALLERY CAROUSEL SCROLL & SWIPE ENGINE
     // ========================================================
     function scrollGallery(galleryId, direction) {
         const gallery = document.getElementById(galleryId);
         if (!gallery) return;
         const scrollAmount = gallery.clientWidth * 0.75 * direction;
         gallery.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+
+    function initGallerySwipeAndCounters() {
+        const galleries = [
+            { id: 'gallery-house', counterId: 'counter-gallery-house' },
+            { id: 'gallery-king', counterId: 'counter-gallery-king' },
+            { id: 'gallery-queen', counterId: 'counter-gallery-queen' }
+        ];
+
+        galleries.forEach(g => {
+            const galEl = document.getElementById(g.id);
+            const counterEl = document.getElementById(g.counterId);
+            if (!galEl) return;
+
+            const items = galEl.querySelectorAll('.gallery-slide-item');
+            if (!items.length) return;
+
+            // Real-time swipe position listener for counter
+            galEl.addEventListener('scroll', () => {
+                const scrollCenter = galEl.scrollLeft + galEl.clientWidth / 2;
+                let closestIndex = 0;
+                let minDistance = Infinity;
+
+                items.forEach((item, index) => {
+                    const itemCenter = item.offsetLeft + item.offsetWidth / 2;
+                    const distance = Math.abs(scrollCenter - itemCenter);
+                    if (distance < minDistance) {
+                        minDistance = distance;
+                        closestIndex = index;
+                    }
+                });
+
+                if (counterEl) {
+                    counterEl.textContent = `Photo ${closestIndex + 1} of ${items.length}`;
+                }
+            }, { passive: true });
+
+            // Desktop Drag-to-Swipe support
+            let isDown = false;
+            let startX = 0;
+            let scrollLeftPos = 0;
+            let hasDragged = false;
+
+            galEl.addEventListener('mousedown', (e) => {
+                isDown = true;
+                hasDragged = false;
+                galEl.classList.add('grabbing');
+                startX = e.pageX - galEl.offsetLeft;
+                scrollLeftPos = galEl.scrollLeft;
+            });
+
+            galEl.addEventListener('mouseleave', () => {
+                isDown = false;
+                galEl.classList.remove('grabbing');
+            });
+
+            galEl.addEventListener('mouseup', () => {
+                isDown = false;
+                galEl.classList.remove('grabbing');
+            });
+
+            galEl.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - galEl.offsetLeft;
+                const walk = (x - startX) * 1.3;
+                if (Math.abs(walk) > 6) {
+                    hasDragged = true;
+                }
+                galEl.scrollLeft = scrollLeftPos - walk;
+            });
+
+            // Prevent opening lightbox if user was dragging
+            items.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    if (hasDragged) {
+                        e.stopImmediatePropagation();
+                        e.preventDefault();
+                    }
+                }, true);
+            });
+        });
     }
 
     // ========================================================
@@ -2696,10 +2778,15 @@
     }
 
     // Initialize all components on DOM Ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initBookingHub);
-    } else {
+    function initAll() {
         initBookingHub();
+        initGallerySwipeAndCounters();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initAll);
+    } else {
+        initAll();
     }
 </script>
 
