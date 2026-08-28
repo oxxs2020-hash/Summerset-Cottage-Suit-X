@@ -675,16 +675,16 @@
            5. SUITE ACTIONS & DIRECT ADVANTAGE CARD
         ---------------------------------------------------- */
         .suite-action-card {
-            background: linear-gradient(135deg, #FAF8F2 0%, #FFFFFF 100%);
-            border: 1.5px solid rgba(197, 160, 89, 0.35);
+            background: linear-gradient(135deg, #FFFFFF 0%, #FAF8F2 100%);
+            border: 1px solid rgba(197, 160, 89, 0.3);
             border-radius: var(--radius-lg);
-            padding: 30px 34px;
-            margin: 40px 0;
-            box-shadow: var(--shadow-sm);
+            padding: clamp(30px, 5vw, 45px) clamp(30px, 5vw, 50px);
+            margin: 40px 0 80px 0;
+            box-shadow: 0 20px 40px rgba(197, 160, 89, 0.08);
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 24px;
+            gap: clamp(24px, 4vw, 40px);
             flex-wrap: wrap;
         }
 
@@ -697,28 +697,31 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            background: rgba(197, 160, 89, 0.15);
+            background: rgba(197, 160, 89, 0.1);
             color: var(--accent-gold-dark);
-            font-size: 0.76em;
+            font-size: 0.8em;
             font-weight: 700;
-            letter-spacing: 1.4px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            padding: 4px 12px;
+            padding: 6px 14px;
             border-radius: 20px;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(197, 160, 89, 0.2);
         }
 
         .suite-action-info h4 {
-            font-size: 1.7em;
-            margin: 0 0 8px 0;
+            font-size: 2.2em;
+            margin: 0 0 16px 0;
             color: var(--text-dark);
+            font-weight: 600;
         }
 
         .suite-action-info p {
             margin: 0;
-            font-size: 0.98em;
+            font-size: 1.05em;
             color: var(--text-body);
-            line-height: 1.6;
+            line-height: 1.8;
+            max-width: 600px;
         }
 
         .suite-action-buttons {
