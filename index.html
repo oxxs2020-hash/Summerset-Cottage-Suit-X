@@ -2515,10 +2515,18 @@
         }
 
         update3D() {
+            const containerWidth = this.gallery.offsetWidth;
             const isMobile = window.innerWidth < 680;
-            const spacing = isMobile ? 125 : 220;
-            const rotateAngle = isMobile ? 26 : 35;
-            const depthZ = isMobile ? 95 : 140;
+            
+            // Getting the actual width of the slide allows perfect responsive overlap
+            const slideWidth = this.slides[0] ? this.slides[0].offsetWidth : (isMobile ? containerWidth * 0.8 : 600);
+            
+            // Calculate proportional spacing based on the actual rendered slide size
+            const baseSpacing = slideWidth * 0.45;
+            const extraSpacing = slideWidth * 0.18;
+            
+            const rotateAngle = isMobile ? 18 : 28;
+            const depthZ = isMobile ? 90 : 130;
 
             this.slides.forEach((slide, i) => {
                 const offset = i - this.activeIndex;
@@ -2534,10 +2542,10 @@
                     slide.style.filter = 'none';
                 } else {
                     slide.classList.remove('active');
-                    const posX = sign * (spacing + (absOffset - 1) * (isMobile ? 50 : 80));
-                    const posZ = -absOffset * depthZ * 0.8;
+                    const posX = sign * (baseSpacing + (absOffset - 1) * extraSpacing);
+                    const posZ = -absOffset * depthZ;
                     const rotY = sign * rotateAngle;
-                    const scale = Math.max(0.68, 1 - absOffset * 0.15);
+                    const scale = Math.max(0.65, 1 - absOffset * 0.15);
                     const opacity = absOffset > 3 ? 0 : Math.max(0.18, 1 - absOffset * 0.28);
                     const visibility = absOffset > 3 ? 'hidden' : 'visible';
                     const brightness = Math.max(0.55, 1 - absOffset * 0.18);
